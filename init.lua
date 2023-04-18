@@ -39,8 +39,8 @@ P.S. You can delete this when you're done too. It's your config now :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -88,6 +88,10 @@ require('lazy').setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
+      -- Toggle LSP warnings and errors
+      'folke/lsp-trouble.nvim',
+      -- Required for lsp-trouble.nvim
+      'kyazdani42/nvim-web-devicons'
     },
   },
 
@@ -247,6 +251,9 @@ vim.api.nvim_set_keymap('i', '{', '{}<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', '"', '""<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', "'", "''<Left>", { noremap = true })
 
+-- Toggle LSP warnings and errors
+vim.api.nvim_set_keymap('n', '<leader>tt', ':TroubleToggle<CR>', {silent = true, noremap = true})
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -264,6 +271,9 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
+        lsp_references = {
+        cwd = vim.loop.cwd(),
+        },
         ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
@@ -281,7 +291,7 @@ vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
     winblend = 10,
-    previewer = false,
+    previewer = false
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
 
