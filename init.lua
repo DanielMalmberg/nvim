@@ -252,7 +252,7 @@ vim.api.nvim_set_keymap('i', '"', '""<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', "'", "''<Left>", { noremap = true })
 
 -- Toggle LSP warnings and errors
-vim.api.nvim_set_keymap('n', '<leader>tt', ':TroubleToggle<CR>', {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>lt', ':TroubleToggle<CR>', {silent = true, noremap = true})
 
 -- Hides the inline LSP warning and error messages (use TroubleToggle instead)
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
