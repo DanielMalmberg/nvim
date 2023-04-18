@@ -254,6 +254,13 @@ vim.api.nvim_set_keymap('i', "'", "''<Left>", { noremap = true })
 -- Toggle LSP warnings and errors
 vim.api.nvim_set_keymap('n', '<leader>tt', ':TroubleToggle<CR>', {silent = true, noremap = true})
 
+-- Hides the inline LSP warning and error messages (use TroubleToggle instead)
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false
+    }
+)
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -510,3 +517,5 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+
