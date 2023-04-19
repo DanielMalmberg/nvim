@@ -518,20 +518,31 @@ cmp.setup {
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
--- Initialize transparency mode
-local currentbg = "NONE"
-vim.cmd('highlight Normal guibg=' .. currentbg)
+-- Define backgroundcolor
+local default_bg = "#1e1e1e"
+local current_bg = default_bg
+
+function change_backgroundcolor()
+  vim.cmd('highlight Normal guibg=' .. current_bg)
+  vim.cmd('highlight LineNr guibg=' .. current_bg)
+  vim.cmd('highlight SignColumn guibg=' .. current_bg)
+end
+
+-- Initialize backgroundcolor 
+change_backgroundcolor()
 
 -- Define a function to toggle between black and transparent
 function toggle_transparency()
-  if currentbg == "#1e1e1e" then
-    currentbg = "NONE"
-  elseif currentbg == "NONE" then
-    currentbg = "#1e1e1e"
+  if current_bg == default_bg then
+    current_bg = "NONE"
+  elseif current_bg == "NONE" then
+    current_bg = default_bg
   end
-  vim.cmd('highlight Normal guibg=' .. currentbg)
+  change_backgroundcolor()
 end
 
 -- Keymap toggle-function 
 vim.api.nvim_set_keymap('n', '<leader>tr', ':lua toggle_transparency()<CR>', { noremap = true, silent = true, desc = 'Toggle transparency' })
 
+-- Keymap to close all buffers
+vim.api.nvim_set_keymap('n', '<leader>cw', ':bufdo bd<CR>', { noremap = true, silent = true, desc = 'Close all windows (buffers)'})
