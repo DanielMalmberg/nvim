@@ -518,4 +518,20 @@ cmp.setup {
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
+-- Initialize transparency mode
+local currentbg = "NONE"
+vim.cmd('highlight Normal guibg=' .. currentbg)
+
+-- Define a function to toggle between black and transparent
+function toggle_transparency()
+  if currentbg == "#1e1e1e" then
+    currentbg = "NONE"
+  elseif currentbg == "NONE" then
+    currentbg = "#1e1e1e"
+  end
+  vim.cmd('highlight Normal guibg=' .. currentbg)
+end
+
+-- Keymap toggle-function 
+vim.api.nvim_set_keymap('n', '<leader>tr', ':lua toggle_transparency()<CR>', { noremap = true, silent = true, desc = 'Toggle transparency' })
 
