@@ -174,7 +174,9 @@ require('lazy').setup({
     },
     build = ":TSUpdate",
   },
-
+ 
+  "nvim-tree/nvim-tree.lua"
+  
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -375,6 +377,36 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+-- require('nvim-treesitter.configs').setup {
+--   -- A list of parser names, or "all"
+--   ensure_installed = {
+--     'c', 
+--     'c_sharp', 
+--     'python', 
+--     'json', 
+--     'lua', 
+--     'gitignore', 
+--     'ruby', 
+--     'vim', 
+--     'markdown', 
+--     'markdown_inline'
+--   },
+--
+--   -- Install parsers synchronously (only applied to 'ensure_installed')
+--   sync_install = false,
+--   auto_install = true,
+--   hightlight = {
+--     enable = true,
+--   },
+-- }
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+require("nvim-tree").setup()
+
+vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
@@ -526,6 +558,7 @@ function change_backgroundcolor()
   vim.cmd('highlight Normal guibg=' .. current_bg)
   vim.cmd('highlight LineNr guibg=' .. current_bg)
   vim.cmd('highlight SignColumn guibg=' .. current_bg)
+  vim.cmd('highlight NvimTreeNormal guibg=' .. current_bg)
 end
 
 -- Initialize backgroundcolor 
