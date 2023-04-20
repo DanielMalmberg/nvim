@@ -252,7 +252,7 @@ vim.api.nvim_set_keymap('i', '"', '""<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', "'", "''<Left>", { noremap = true })
 
 -- Toggle LSP warnings and errors
-vim.api.nvim_set_keymap('n', '<leader>lt', ':TroubleToggle<CR>', {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>lt', ':TroubleToggle<CR>', {silent = true, noremap = true, desc = 'Toggle list of LSP warnings and errors (c)'})
 
 -- Hides the inline LSP warning and error messages (use TroubleToggle instead)
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -520,7 +520,7 @@ cmp.setup {
 
 -- Define backgroundcolor
 local default_bg = "#1e1e1e"
-local current_bg = default_bg
+local current_bg = "NONE"
 
 function change_backgroundcolor()
   vim.cmd('highlight Normal guibg=' .. current_bg)
