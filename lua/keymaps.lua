@@ -49,7 +49,12 @@ vim.api.nvim_set_keymap('n', '<leader>tr', ':lua toggle_transparency()<CR>',
 -- Keymap to close all buffers
 vim.api.nvim_set_keymap('n', '<leader>cw', ':bufdo bd<CR>',
   { noremap = true, silent = true, desc = 'Close all windows (buffers)' })
+vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', { desc = "Open File Explorer", silent = true })
 
-vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', { desc = "Open File Explorer" })
+vim.keymap.set('n', '<C-M-f>', ':Format<CR>', { desc = "Format code (according to current LSP)", silent = true })
 
-vim.keymap.set('n', '<C-M-f>', ':Format<CR>', { desc = "Format code (according to current LSP)" })
+vim.keymap.set('n', '<CR>', 'o<ESC>', { desc = "Create new row in normal mode", silent = true })
+
+vim.keymap.set('n', '<S-CR>', '<S-o><ESC>', { desc = "Create new row in normal mode (above)", silent = true })
+
+vim.keymap.set('n', '<BS>', 'ddk', { desc = "Delete row in normal mode", silent = true })
