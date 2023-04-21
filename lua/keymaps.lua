@@ -1,6 +1,8 @@
 -- [[ Basic Keymaps ]]
 -- `:help Telescope keymaps`
 
+local utils = require('utils')
+
 -- `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -17,7 +19,7 @@ vim.api.nvim_set_keymap('i', "'", "''<Left>", { noremap = true })
 
 -- Toggle LSP warnings and errors
 vim.api.nvim_set_keymap('n', '<leader>lt', ':TroubleToggle<CR>',
-{ silent = true, noremap = true, desc = 'Toggle list of LSP warnings and errors (c)' })
+  { silent = true, noremap = true, desc = 'Toggle list of LSP warnings and errors (c)' })
 
 -- `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -43,7 +45,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Keymap toggle-function
-vim.api.nvim_set_keymap('n', '<leader>tr', ':lua toggle_transparency()<CR>',
+vim.api.nvim_set_keymap('n', '<leader>tr', '<cmd>lua require("utils").toggle_transparency()<CR>',
   { noremap = true, silent = true, desc = 'Toggle transparency' })
 
 -- Keymap to close all buffers
@@ -58,3 +60,7 @@ vim.keymap.set('n', '<CR>', 'o<ESC>', { desc = "Create new row in normal mode", 
 vim.keymap.set('n', '<S-CR>', '<S-o><ESC>', { desc = "Create new row in normal mode (above)", silent = true })
 
 vim.keymap.set('n', '<BS>', 'dd', { desc = "Delete row in normal mode", silent = true })
+
+vim.api.nvim_set_keymap('n', '<BS>', 'ddk', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<S-BS>', 'dd', { noremap = true, silent = true })
