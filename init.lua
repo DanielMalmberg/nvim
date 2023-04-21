@@ -116,7 +116,7 @@ require('lazy').setup({
     },
   },
 
-  { -- theme inspired by atom
+  {
    -- 'navarasu/onedark.nvim',
     'mofiqul/vscode.nvim',
     priority = 1000,
@@ -174,9 +174,9 @@ require('lazy').setup({
     },
     build = ":TSUpdate",
   },
- 
+
   "nvim-tree/nvim-tree.lua"
-  
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
