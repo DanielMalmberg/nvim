@@ -57,4 +57,4 @@ vim.keymap.set('n', '<CR>', 'o<ESC>', { desc = "Create new row in normal mode", 
 
 vim.keymap.set('n', '<S-CR>', '<S-o><ESC>', { desc = "Create new row in normal mode (above)", silent = true })
 
-vim.keymap.set('n', '<BS>', 'ddk', { desc = "Delete row in normal mode", silent = true })
+vim.keymap.set('n', '<BS>', 'dd', { desc = "Delete row in normal mode", silent = true })
