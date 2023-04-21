@@ -16,7 +16,8 @@ vim.api.nvim_set_keymap('i', '"', '""<Left>', { noremap = true })
 vim.api.nvim_set_keymap('i', "'", "''<Left>", { noremap = true })
 
 -- Toggle LSP warnings and errors
-vim.api.nvim_set_keymap('n', '<leader>lt', ':TroubleToggle<CR>', {silent = true, noremap = true, desc = 'Toggle list of LSP warnings and errors (c)'})
+vim.api.nvim_set_keymap('n', '<leader>lt', ':TroubleToggle<CR>',
+{ silent = true, noremap = true, desc = 'Toggle list of LSP warnings and errors (c)' })
 
 -- `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -43,10 +44,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Keymap toggle-function
 vim.api.nvim_set_keymap('n', '<leader>tr', ':lua toggle_transparency()<CR>',
-{ noremap = true, silent = true, desc = 'Toggle transparency' })
+  { noremap = true, silent = true, desc = 'Toggle transparency' })
 
 -- Keymap to close all buffers
 vim.api.nvim_set_keymap('n', '<leader>cw', ':bufdo bd<CR>',
-{ noremap = true, silent = true, desc = 'Close all windows (buffers)' })
+  { noremap = true, silent = true, desc = 'Close all windows (buffers)' })
 
-vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
+vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', { desc = "Open File Explorer" })
+
+vim.keymap.set('n', '<C-M-f>', ':Format<CR>', { desc = "Format code (according to current LSP)" })
