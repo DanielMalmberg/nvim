@@ -207,6 +207,9 @@ vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
+-- Scroll steps when using <C-u>, <C-d>, <C-y> and <C-e>
+vim.o.scroll = 20
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -404,7 +407,6 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup()
-
 vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')
 
 -- Diagnostic keymaps
@@ -559,6 +561,7 @@ function change_backgroundcolor()
   vim.cmd('highlight LineNr guibg=' .. current_bg)
   vim.cmd('highlight SignColumn guibg=' .. current_bg)
   vim.cmd('highlight NvimTreeNormal guibg=' .. current_bg)
+  vim.cmd('highlight NvimTreeWinSeparator guifg=#505050 guibg=' .. current_bg)
 end
 
 -- Initialize backgroundcolor 
