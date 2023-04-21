@@ -3,7 +3,7 @@
 
 local utils = require('utils')
 
--- GENERAL 
+-- TYPING 
 -----------------------------------------------------------
 -- automatically add closing parentheses and quotations
 vim.keymap.set('i', '(', '()<Left>')
@@ -18,15 +18,19 @@ vim.keymap.set('n', '<BS>', 'ddk', { desc = "Delete row in normal mode", })
 vim.keymap.set('n', '<S-BS>', 'dd', { desc = "Delete row in normal mode (use on last row)" })
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { desc = "Disable Space-key in normal and visual", silent = true })
 
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+
+-- FUNCTIONS
+-----------------------------------------------------------
 vim.keymap.set('n', '<C-M-f>', ':Format<CR>', { desc = "Format code (according to current LSP)", silent = true })
 
 vim.keymap.set('n', '<leader>tr', "<cmd>lua require('utils').toggle_transparency()<CR>", { desc = "Toggle transparency", silent = true })
 
 vim.keymap.set('n', '<leader>cw', ':bufdo bd<CR>', { desc = "Close all windows (buffers)", silent = true })
 
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- PLUGINS 
 -----------------------------------------------------------
