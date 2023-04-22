@@ -28,6 +28,9 @@ require('lazy').setup({
 
   -- File explorer 
   "nvim-tree/nvim-tree.lua",
+  
+  -- Tabs
+  {'akinsho/bufferline.nvim', version = "*"},
 
   -- Set lualine as statusline
   -- `:help lualine.txt`

@@ -34,6 +34,11 @@ vim.keymap.set('n', '<leader>cw', ':bufdo bd<CR>', { desc = "Close all windows (
 
 -- PLUGINS 
 -----------------------------------------------------------
+-- Bufferline
+vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
+vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
+vim.keymap.set("n", "<leader>x", ":lua close_current_buffer()<CR>", { silent = true })
+
 -- Toggle LSP warnings and errors
 vim.keymap.set('n', '<leader>tt', ':ToggleDiag<CR>', { desc = "[T]oggle [Troubles] - show/hide LSP warnings and errors"})
 vim.keymap.set('n', '<leader>lt', ':TroubleToggle<CR>', { desc = "[L]ist all [T]roubles - LSP warnings and errors", silent = true })

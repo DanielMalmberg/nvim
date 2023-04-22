@@ -49,3 +49,6 @@ vim.o.termguicolors = true
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Required for Bufferline plugin to work
+vim.opt.termguicolors = true
