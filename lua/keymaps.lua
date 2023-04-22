@@ -81,3 +81,7 @@ vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = "Debugger - Tog
 vim.keymap.set('n', '<leader>B', function()
     dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
   end, { desc = "Debugger - Toggle breakpoint (with condition)", silent = true })
+
+-- Diffview (Git)
+vim.keymap.set('n', '<leader>go', ":DiffviewOpen<CR>", { desc = "View all git changes", silent = true })
+vim.keymap.set('n', '<leader>gc', ":DiffviewClose<CR>", { desc = "View all git changes", silent = true })

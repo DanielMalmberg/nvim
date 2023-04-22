@@ -9,6 +9,9 @@ M.change_backgroundcolor = function(color)
   vim.cmd('highlight NvimTreeNormal guibg=' .. color)
   vim.cmd('highlight NvimTreeWinSeparator guifg=#505050 guibg=' .. color)
   vim.cmd('highlight BufferLineFill guibg=' .. color)
+  vim.cmd('highlight diffAdded guibg=' .. color)
+  vim.cmd('highlight diffChanged guibg=' .. color)
+  vim.cmd('highlight diffRemoved guibg=' .. color)
 end
 
 M.toggle_transparency = function()

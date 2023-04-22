@@ -48,11 +48,6 @@ require('lazy').setup({
 
   -- FEATURES
   -----------------------------------------------------------
-
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
   -- LSP Configuration & Plugins
   { 
     'neovim/nvim-lspconfig',
@@ -73,6 +68,11 @@ require('lazy').setup({
       'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
     },
   },
+
+  -- Git related plugins
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+  'sindrets/diffview.nvim',
 
   -- Adds git releated signs to the gutter
   -- as well as utilities for managing changes
