@@ -66,7 +66,8 @@ require('lazy').setup({
       -- Toggle LSP warnings and errors
       'folke/lsp-trouble.nvim',
       -- Required for lsp-trouble.nvim
-      'kyazdani42/nvim-web-devicons'
+      'kyazdani42/nvim-web-devicons',
+      'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
     },
   },
 
