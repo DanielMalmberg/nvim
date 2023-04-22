@@ -49,13 +49,7 @@ vim.keymap.set('n', '<leader>lt', ':TroubleToggle<CR>', { desc = "[L]ist all [T]
 -- `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = "[?] Find recently opened files" })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = "[ ] Find existing buffers" })
-vim.keymap.set('n', '<leader>/', function()
-  -- Pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false
-  })
-end, { desc = "[/] Fuzzily search in current buffer" })
+vim.keymap.set('n', '<leader><C-f>', ':Telescope current_buffer_fuzzy_find<CR>', { desc = "[/] Fuzzily search in current buffer", silent = true })
 
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = "[S]earch [F]iles" })
 vim.keymap.set('n', ',sh', require('telescope.builtin').help_tags, { desc = "[S]earch [H]elp" })
