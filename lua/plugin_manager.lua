@@ -121,6 +121,9 @@ require('lazy').setup({
     build = ":TSUpdate",
   },
 
+  -- Toggleable terminal window
+  "akinsho/toggleterm.nvim",
+
   -- ENHANCED TYPING 
   -----------------------------------------------------------
   -- Autocompletion
