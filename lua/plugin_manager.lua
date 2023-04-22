@@ -118,7 +118,7 @@ require('lazy').setup({
     build = ":TSUpdate",
   },
 
-  -- ENHANCED WRITING
+  -- ENHANCED TYPING 
   -----------------------------------------------------------
   -- Autocompletion
   {
@@ -130,6 +130,9 @@ require('lazy').setup({
         'saadparwaiz1/cmp_luasnip'
     }
   },
+
+  -- Change symbols wrapping a text
+  "tpope/vim-surround",
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
