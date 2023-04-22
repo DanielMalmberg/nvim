@@ -44,7 +44,9 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Enable default language servers
 local servers = {
-  -- pyright = {},
+  html = {},
+  jsonls = {},
+  pylsp = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
