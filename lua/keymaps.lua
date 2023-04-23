@@ -11,7 +11,8 @@ local keymaps = {
         ['['] = { '[]<Left>', "" },
         ['{'] = { '{}<Left>', "" },
         ['"'] = { '""<Left>', "" },
-        ["'"] = { "''<Left>", "" }
+        ["'"] = { "''<Left>", "" },
+        ['<C-c>'] = { '<ESC>', ""}
     },
     visual = {
         ['<Tab>'] = { '>gv', "Indent selection in visual mode" },
@@ -38,6 +39,7 @@ local keymaps = {
         ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
         ['<leader>tr'] = { "<cmd>lua require('utils').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
+        ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', "Replace all occurrences of current word in current file" },
         
         
         -- PLUGINS 
