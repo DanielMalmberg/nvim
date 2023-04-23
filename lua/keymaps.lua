@@ -16,6 +16,8 @@ local keymaps = {
     visual = {
         ['<Tab>'] = { '>gv', "Indent selection in visual mode" },
         ['<S-Tab>'] = { '<gv', "Back-indent selection in visual mode" },
+        ['J'] = { ":m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
+        ['K'] = { ":m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
     },
     normal = {
         -- NAVIGATING
