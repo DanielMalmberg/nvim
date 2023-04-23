@@ -66,8 +66,8 @@ local keymaps = {
         ['<leader>b'] = { dap.toggle_breakpoint, "Debugger - Toggle breakpoint" },
         ['<leader>B'] = { function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end, "Debugger - Toggle breakpoint (with condition)" },
         -- Diffview (Git)
-        ['<leader>go'] = { ":DiffviewOpen<CR>", "View all git changes" },
-        ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes" }
+        ['<leader>go'] = { ":DiffviewOpen<CR>", "View all git changes (open)" },
+        ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" }
     },
     normal_and_visual = {
         ['<C-k>'] = { '4k', "Faster scrolling (up)"},
