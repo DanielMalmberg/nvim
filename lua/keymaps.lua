@@ -1,81 +1,76 @@
 -- [[ Basic Keymaps ]]
--- `:help Telescope keymaps`
+-- `:Telescope keymaps`
 
--- TYPING 
+local dap = require('dap')
+
+--  { mode, input, output, description }
+local keymaps = {
+    -- TYPING
+    -----------------------------------------------------------
+    -- Insert mode
+    { 'i', '(', '()<Left>', "" },
+    { 'i', '[', '[]<Left>', "" },
+    { 'i', '{', '{}<Left>', "" },
+    { 'i', '"', '""<Left>', "" },
+    { 'i', "'", "''<Left>", "" },
+    -- Visual mode
+    { 'v', '<Tab>', '>gv', "Indent selection in visual mode" },
+    { 'v', '<S-Tab>', '<gv', "Back-indent selection in visual mode"},
+    -- Normal mode
+    { 'n', '<CR>', 'o<ESC>', "Create new row in normal mode" },
+    { 'n', '<S-CR>', '<S-o><ESC>', "Create new row in normal mode (above)" },
+    { 'n', '<BS>', 'ddk', "Delete row in normal mode" },
+    { 'n', '<S-BS>', 'dd', "Delete row in normal mode (use on last row)" },
+    { 'n', '<Space>', '<Nop>', "Disable Space-key in normal" },
+    { 'v', '<Space>', '<Nop>', "Disable Space-key in visual" },
+
+    -- FUNCTIONS 
+    -----------------------------------------------------------
+    { 'n', '<C-M-f>', ':Format<CR>', "Format code (according to current LSP)" },
+    { 'n', '<leader>tr', "<cmd>lua require('utils').toggle_transparency()<CR>", "Toggle transparency" },
+    { 'n', '<leader>cw', ':bufdo bd<CR>', "Close all windows (buffers)" },
+
+    -- PLUGINS 
+    -----------------------------------------------------------
+    -- Bufferline 
+    { 'n', '<Tab>', ':BufferLineCycleNext<CR>', "" },
+    { 'n', '<S-Tab>', ':BufferLineCyclePrev<CR>', "" },
+    { "n", "<leader>x", ":lua require('utils').close_current_buffer()<CR>", "" },
+    -- Toggle LSP warnings and errors
+    { 'n', '<leader>tt', ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
+    { 'n', '<leader>lt', ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
+    -- Telecope (`h telescope.builtin`)
+    { 'n', '<leader>?', require('telescope.builtin').oldfiles, "[?] Find recently opened files" },
+    { 'n', '<leader><space>', require('telescope.builtin').buffers, "[ ] Find existing buffers" },
+    { 'n', '<leader><C-f>', ':Telescope current_buffer_fuzzy_find<CR>', "[/] Fuzzily search in current buffer" },
+    { 'n', '<C-f>', require('telescope.builtin').live_grep, "[S]earch by [G]rep" },
+    { 'n', '<C-p>', require('telescope.builtin').find_files, "[S]earch [F]iles" },
+    { 'n', '<leader>sh', require('telescope.builtin').help_tags, "[S]earch [H]elp" },
+    { 'n', '<leader>sw', require('telescope.builtin').grep_string, "[S]earch current [W]ord" },
+    { 'n', '<leader>sd', require('telescope.builtin').diagnostics, "[S]earch [D]iagnostics" },
+    -- Diagnostic keymaps
+    { 'n', '[d', vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
+    { 'n', ']d', vim.diagnostic.goto_next, "Go to next diagnostic message" },
+    { 'n', '<leader>e', vim.diagnostic.open_float, "Open floating diagnostic message" },
+    { 'n', '<leader>q', vim.diagnostic.setloclist, "Open diagnostics list" },
+    -- Nvim-tree
+    { 'n', '<C-n>', ':NvimTreeFindFileToggle<CR>', "Open File Explorer" },
+    -- Debugger
+    { 'n', '<F5>', dap.continue, "Debugger - Continue" },
+    { 'n', '<F1>', dap.step_over, "Debugger - Step over" },
+    { 'n', '<F2>', dap.step_into, "Debugger - Step into" },
+    { 'n', '<F3>', dap.step_out, "Debugger - Step out" },
+    { 'n', '<leader>b', dap.toggle_breakpoint, "Debugger - Toggle breakpoint" },
+    { 'n', '<leader>B', function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end, "Debugger - Toggle breakpoint (with condition)" },
+    -- Diffview (Git)
+    { 'n', '<leader>go', ":DiffviewOpen<CR>", "View all git changes" },
+    { 'n', '<leader>gc', ":DiffviewClose<CR>", "View all git changes" }
+}
+
+require('utils').apply_keymaps(keymaps)
+
+-- CUSTOM KEYMAPS 
 -----------------------------------------------------------
--- Insert mode
-vim.keymap.set('i', '(', '()<Left>')
-vim.keymap.set('i', '[', '[]<Left>')
-vim.keymap.set('i', '{', '{}<Left>')
-vim.keymap.set('i', '"', '""<Left>')
-vim.keymap.set('i', "'", "''<Left>")
-
--- Visual mode
-vim.keymap.set('v', '<Tab>', '>gv', { desc = "Indent selection in visual mode", silent = true })
-vim.keymap.set('v', '<S-Tab>', '<gv', { desc = "Back-indent selection in visual mode", silent = true })
-
--- Normal mode
-vim.keymap.set('n', '<CR>', 'o<ESC>', { desc = "Create new row in normal mode" })
-vim.keymap.set('n', '<S-CR>', '<S-o><ESC>', { desc = "Create new row in normal mode (above)" })
-vim.keymap.set('n', '<BS>', 'ddk', { desc = "Delete row in normal mode", })
-vim.keymap.set('n', '<S-BS>', 'dd', { desc = "Delete row in normal mode (use on last row)" })
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { desc = "Disable Space-key in normal and visual", silent = true })
-
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
-
--- FUNCTIONS
------------------------------------------------------------
-vim.keymap.set('n', '<C-M-f>', ':Format<CR>', { desc = "Format code (according to current LSP)", silent = true })
-
-vim.keymap.set('n', '<leader>tr', "<cmd>lua require('utils').toggle_transparency()<CR>", { desc = "Toggle transparency", silent = true })
-
-vim.keymap.set('n', '<leader>cw', ':bufdo bd<CR>', { desc = "Close all windows (buffers)", silent = true })
-
-
--- PLUGINS 
------------------------------------------------------------
--- Bufferline
-vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
-vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { silent = true })
-vim.keymap.set("n", "<leader>x", ":lua require('utils').close_current_buffer()<CR>", { silent = true })
-
--- Toggle LSP warnings and errors
-vim.keymap.set('n', '<leader>tt', ':ToggleDiag<CR>', { desc = "[T]oggle [Troubles] - show/hide LSP warnings and errors"})
-vim.keymap.set('n', '<leader>lt', ':TroubleToggle<CR>', { desc = "[L]ist all [T]roubles - LSP warnings and errors", silent = true })
-
--- `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = "[?] Find recently opened files" })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = "[ ] Find existing buffers" })
-vim.keymap.set('n', '<leader><C-f>', ':Telescope current_buffer_fuzzy_find<CR>', { desc = "[/] Fuzzily search in current buffer", silent = true })
-
-vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = "[S]earch [F]iles" })
-vim.keymap.set('n', ',sh', require('telescope.builtin').help_tags, { desc = "[S]earch [H]elp" })
-vim.keymap.set('n', ',sw', require('telescope.builtin').grep_string, { desc = "[S]earch current [W]ord" })
-vim.keymap.set('n', '<C-f>', require('telescope.builtin').live_grep, { desc = "[S]earch by [G]rep" })
-vim.keymap.set('n', ',sd', require('telescope.builtin').diagnostics, { desc = "[S]earch [D]iagnostics" })
-
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-
-vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>', { desc = "Open File Explorer", silent = true })
-
--- Debugger
-dap = require('dap')
-vim.keymap.set('n', '<F5>', dap.continue, { desc = "Debugger - Continue", silent = true })
-vim.keymap.set('n', '<F1>', dap.step_over, { desc = "Debugger - Step over", silent = true })
-vim.keymap.set('n', '<F2>', dap.step_into, { desc = "Debugger - Step into", silent = true })
-vim.keymap.set('n', '<F3>', dap.step_out, { desc = "Debugger - Step out", silent = true })
-vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = "Debugger - Toggle breakpoint", silent = true })
-vim.keymap.set('n', '<leader>B', function()
-    dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-  end, { desc = "Debugger - Toggle breakpoint (with condition)", silent = true })
-
--- Diffview (Git)
-vim.keymap.set('n', '<leader>go', ":DiffviewOpen<CR>", { desc = "View all git changes", silent = true })
-vim.keymap.set('n', '<leader>gc', ":DiffviewClose<CR>", { desc = "View all git changes", silent = true })

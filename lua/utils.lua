@@ -36,4 +36,10 @@ M.close_current_buffer = function()
   vim.cmd(":bd!")
 end
 
+M.apply_keymaps = function(keymaps)
+  for _, map in ipairs(keymaps) do
+   vim.keymap.set(map[1], map[2], map[3], { desc = map[4], silent = true })
+  end
+end
+
 return M
