@@ -1,6 +1,7 @@
 -- [[ Basic Keymaps ]]
 -- `:Telescope keymaps`
 
+local utils = require('utils')
 local dap = require('dap')
 
 -- ['input'] = { 'output', "description" }
@@ -74,11 +75,22 @@ local keymaps = {
         ['<C-j>'] = { '4j', "Faster scrolling (down)"},
     }
 }
+utils.apply_keymaps(keymaps)
 
-require('utils').apply_keymaps(keymaps)
 
--- KEYMAPS WITH MORE OPTIONS
+-- SPECIAL KEYMAPS
 ------------------------------------
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+wrap_text_symbols = {
+    {"\'", "\'"},
+    {'\"', '\"'},
+    {'*', '*'},
+    {'(', ')'},
+    {'[', ']'},
+    {'{', '}'},
+}
+utils.warp_text_keymaps(wrap_text_symbols)
+

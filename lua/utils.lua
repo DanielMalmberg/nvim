@@ -51,4 +51,21 @@ M.apply_keymaps = function(keymaps)
     end
 end
 
+M.warp_text_keymaps = function(symbols)
+  for _, symbol in pairs(symbols) do
+    local left = symbol[1]
+    local right = symbol[2]
+    local both = "'" .. left .. "' and '" .. right .. "'"
+    -- Selected text (visual)
+    vim.keymap.set('v', '<leader>wt' .. left, 'c' .. left .. right .. '<Left><C-c>p<Right>', 
+      { desc = "[W]rap [t]ext in the symbols " .. both, silent = true })
+    -- Selected text (normal)
+    vim.keymap.set('n', '<leader>wt' .. left, 'viwc' .. left .. right .. '<Left><C-c>p<Right>', 
+      { desc = "[W]rap [t]ext in the symbols " .. both, silent = true })
+    -- Selected line (visual)
+    vim.keymap.set('v', '<leader>wl' .. left, 'c' .. left .. '<C-c>p$a' .. right .. '<C-c>0i<BS><C-c>$', 
+      { desc = "[W]rap [l]ine in the symbols " .. both, silent = true } )
+  end 
+  end
+
 return M
