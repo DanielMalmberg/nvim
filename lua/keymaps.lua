@@ -22,6 +22,8 @@ local keymaps = {
     normal = {
         -- NAVIGATING
         ---------------------------------------
+        ['<C-d>'] = { '<C-d>zz', "" },
+        ['<C-u>'] = { '<C-u>zz', "" },
         ['<CR>'] = { 'o<ESC>', "Create new row in normal mode" },
         ['<S-CR>'] = { '<S-o><ESC>', "Create new row in normal mode (above)" },
         ['<BS>'] = { 'ddk', "Delete row in normal mode" },
