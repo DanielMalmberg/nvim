@@ -1,4 +1,4 @@
--- [[ Config utilities ]]
+-- [[ Config utilities ]
 
 local M = {}
 
@@ -36,10 +36,19 @@ M.close_current_buffer = function()
   vim.cmd(":bd!")
 end
 
+local modes = {
+  ['insert'] = 'i',
+  ['visual'] = 'v',
+  ['normal'] = 'n',
+  ['normal_and_visual'] = { 'n', 'v' }
+}
+
 M.apply_keymaps = function(keymaps)
-  for _, map in ipairs(keymaps) do
-   vim.keymap.set(map[1], map[2], map[3], { desc = map[4], silent = true })
-  end
+    for mode, bindings in pairs(keymaps) do
+        for key, binding in pairs(bindings) do
+            vim.keymap.set(modes[mode], key, binding[1], { desc = binding[2], silent = true })
+        end
+    end
 end
 
 return M
