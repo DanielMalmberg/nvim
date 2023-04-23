@@ -22,8 +22,10 @@ local keymaps = {
     normal = {
         -- NAVIGATING
         ---------------------------------------
-        ['<C-d>'] = { '<C-d>zz', "" },
-        ['<C-u>'] = { '<C-u>zz', "" },
+        ['n'] = { 'nzzzv', "Keeps the cursos in the middle when stepping through searches" },
+        ['N'] = { 'Nzzzv', "Keeps the cursos in the middle when stepping through searches" },
+        ['<C-d>'] = { '<C-d>zz', "Keeps the cursor in the middle when jumping down the page" },
+        ['<C-u>'] = { '<C-u>zz', "Keeps the cursor in the middle when jumping up the page" },
         ['<CR>'] = { 'o<ESC>', "Create new row in normal mode" },
         ['<S-CR>'] = { '<S-o><ESC>', "Create new row in normal mode (above)" },
         ['<BS>'] = { 'ddk', "Delete row in normal mode" },
