@@ -17,6 +17,8 @@ local keymaps = {
     { 'v', '<Tab>', '>gv', "Indent selection in visual mode" },
     { 'v', '<S-Tab>', '<gv', "Back-indent selection in visual mode"},
     -- Normal mode
+    { 'n', '<C-k>', '4k', "Faster scrolling (up)"},
+    { 'n', '<C-j>', '4j', "Faster scrolling (down)"},
     { 'n', '<CR>', 'o<ESC>', "Create new row in normal mode" },
     { 'n', '<S-CR>', '<S-o><ESC>', "Create new row in normal mode (above)" },
     { 'n', '<BS>', 'ddk', "Delete row in normal mode" },
