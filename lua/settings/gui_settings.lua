@@ -6,9 +6,9 @@ local M = {}
 -----------------------------------------------------------
 -- Theme
 M.theme = {
-    -- 'vscode', 'mofiqul/vscode.nvim', '#1e1e1e'
+    'vscode', 'mofiqul/vscode.nvim', '#1e1e1e'
     -- 'onedark', 'navarasu/onedark.nvim', '#262A2F'
-    'tokyonight', 'folke/tokyonight.nvim', '#242634'
+    -- 'tokyonight', 'folke/tokyonight.nvim', '#242634'
 }
 
 -- Color settings 
@@ -21,5 +21,3 @@ M.colors = {
     -- key = { 'propery', 'value' }
     NvimTreeSeparator = { 'guifg', '#505050' }
 }
-
-return M
