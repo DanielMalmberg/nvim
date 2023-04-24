@@ -1,0 +1,8 @@
+require('plugins.mason_lspconfig')
+require('plugins.neodev')
+require('plugins.nvim-cmp')
+require('plugins.nvim-tree')
+require('plugins.telescope')
+require('plugins.treesitter')
+require('plugins.bufferline')
+require('plugins.toggleterm')

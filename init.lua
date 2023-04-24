@@ -1,5 +1,5 @@
 require('plugin_manager')
-require('plugin_configs')
+require('plugins')
 require('settings')
 require('keymaps')
 require('features')

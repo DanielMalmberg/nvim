@@ -22,7 +22,7 @@ M.default_bg =  M.theme[3]
 M.current_bg = transparent_at_startup and "NONE" or M.default_bg
 M.colors = {
     -- key = { 'propery', 'value' }
-    NvimTreeSeparator = { 'guifg', '#505050' }
+    NvimTreeWinSeparator = { 'guifg', '#505050' }
 }
 
 return M
