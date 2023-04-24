@@ -33,6 +33,7 @@ local keymaps = {
         ['<S-BS>'] = { 'dd', "Delete row in normal mode (use on last row)" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in normal" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in visual" },
+        ['<leader>p'] = { '\"_dP', "Paste and keep text in the yank register" },
 
         -- FUNCTIONS 
         ---------------------------------------
