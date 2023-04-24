@@ -11,15 +11,35 @@ M.get_theme = function()
 end
 
 M.change_backgroundcolor = function(color)
-  vim.cmd('highlight Normal guibg=' .. color)
-  vim.cmd('highlight LineNr guibg=' .. color)
-  vim.cmd('highlight SignColumn guibg=' .. color)
-  vim.cmd('highlight NvimTreeNormal guibg=' .. color)
-  vim.cmd('highlight NvimTreeWinSeparator guifg=#505050 guibg=' .. color)
-  vim.cmd('highlight BufferLineFill guibg=' .. color)
-  vim.cmd('highlight diffAdded guibg=' .. color)
-  vim.cmd('highlight diffChanged guibg=' .. color)
-  vim.cmd('highlight diffRemoved guibg=' .. color)
+  local backgrounds = {
+    'Normal',
+    'NormalNC',
+    'LineNr',
+    'SignColumn',
+    'FoldColumn',
+    'NvimTreeNormal',
+    'NvimTreeNormalNC',
+    'NvimTreeEndOfBuffer',
+    'NvimTreeWinSeparator',
+    'BufferLineFill',
+    'diffAdded',
+    'diffChanged',
+    'diffRemoved',
+    'EndOfBuffer',
+    'TelescopeNormal'
+  }
+
+  for _, property in pairs(backgrounds) do
+    vim.cmd(string.format('highlight %s guibg=%s', property, color))
+  end
+end
+
+M.set_default_colors = function()
+  settings = require('settings.gui_settings')
+  M.change_backgroundcolor(settings.current_bg)
+  for key, color in pairs(settings.colors) do
+    vim.cmd('hi ' .. tostring(key) .. string.format(' %s=%s', unpack(color)))
+  end
 end
 
 M.toggle_transparency = function()
@@ -67,11 +87,11 @@ M.apply_text_wrapping_keymaps = function(keymaps)
     local desc_line = "[W]rap [l]ine in symbols"
     for key, symbol in pairs(symbols) do
       -- Selected text (visual)
-      vim.keymap.set('v', symbol, cmd_text, { desc = desc_text, silent = true })
+      vim.keymap.set('v', '<leader>' .. symbol, cmd_text, { desc = desc_text, silent = true })
       -- Selected text (normal)
-      vim.keymap.set('n', symbol, 'viw' .. cmd_text, { desc = desc_text, silent = true })
+      vim.keymap.set('n', '<leader>' .. symbol, 'viw' .. cmd_text, { desc = desc_text, silent = true })
       -- Selected line (visual)
-      vim.keymap.set('v', '<leader>' .. symbol, cmd_line, { desc = desc_line, silent = true })
+      vim.keymap.set('v', '<leader>l' .. symbol, cmd_line, { desc = desc_line, silent = true })
     end
   end 
 end
