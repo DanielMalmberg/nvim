@@ -40,6 +40,7 @@ local keymaps = {
         ['<leader>tr'] = { "<cmd>lua require('utils').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', "Replace all occurrences of current word in current file" },
+        ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program"},
         
         
         -- PLUGINS 
