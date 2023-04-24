@@ -21,3 +21,5 @@ M.colors = {
     -- key = { 'propery', 'value' }
     NvimTreeSeparator = { 'guifg', '#505050' }
 }
+
+return M
