@@ -1,5 +1,9 @@
 -- [[ Configure Plugin manager ]]
 
+utils = require('utils')
+local theme = utils.get_theme()[1]
+local theme_plugin = utils.get_theme()[2]
+
 -- `:help lazy.nvim.txt`
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -18,11 +22,10 @@ require('lazy').setup({
   -- THEMES AND GUI
   -----------------------------------------------------------
   {
-   -- 'navarasu/onedark.nvim',
-    'mofiqul/vscode.nvim',
+    theme_plugin,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'vscode'
+      vim.cmd.colorscheme(theme)
     end,
   },
 
@@ -39,7 +42,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'vscode',
+        theme = theme,
         component_separators = '|',
         section_separators = '',
       },

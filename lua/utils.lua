@@ -2,6 +2,14 @@
 
 local M = {}
 
+M.get_theme = function()
+  theme = require('settings.gui_settings').theme
+  if #theme ~= 3 then
+    error('Error - GUI theme needs exactly 3 values specified - name, plugin and backgroundcolor')
+  end
+  return theme
+end
+
 M.change_backgroundcolor = function(color)
   vim.cmd('highlight Normal guibg=' .. color)
   vim.cmd('highlight LineNr guibg=' .. color)
@@ -19,9 +27,9 @@ M.toggle_transparency = function()
   if settings.current_bg == settings.default_bg then
     settings.current_bg = "NONE"
   elseif settings.current_bg == "NONE" then
-    settings.current_bg = tostring(settings.default_bg)
+    settings.current_bg = settings.default_bg
   end
-  M.change_backgroundcolor(tostring(settings.current_bg))
+  M.change_backgroundcolor(settings.current_bg)
 end
 
 M.close_current_buffer = function()
