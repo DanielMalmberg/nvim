@@ -101,5 +101,5 @@ wrap_text_symbols = {
     {'[', ']'},
     {'{', '}'},
 }
-utils.warp_text_keymaps(wrap_text_symbols)
+utils.apply_text_wrapping_keymaps(wrap_text_symbols)
 

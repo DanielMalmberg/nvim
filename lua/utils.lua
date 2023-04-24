@@ -51,21 +51,21 @@ M.apply_keymaps = function(keymaps)
     end
 end
 
-M.warp_text_keymaps = function(symbols)
-  for _, symbol in pairs(symbols) do
-    local left = symbol[1]
-    local right = symbol[2]
-    local both = "'" .. left .. "' and '" .. right .. "'"
-    -- Selected text (visual)
-    vim.keymap.set('v', '<leader>wt' .. left, 'c' .. left .. right .. '<Left><C-c>p<Right>', 
-      { desc = "[W]rap [t]ext in the symbols " .. both, silent = true })
-    -- Selected text (normal)
-    vim.keymap.set('n', '<leader>wt' .. left, 'viwc' .. left .. right .. '<Left><C-c>p<Right>', 
-      { desc = "[W]rap [t]ext in the symbols " .. both, silent = true })
-    -- Selected line (visual)
-    vim.keymap.set('v', '<leader>wl' .. left, 'c' .. left .. '<C-c>p$a' .. right .. '<C-c>0i<BS><C-c>$', 
-      { desc = "[W]rap [l]ine in the symbols " .. both, silent = true } )
+M.apply_text_wrapping_keymaps = function(keymaps)
+  for _, symbols in pairs(keymaps) do
+    local cmd_text = string.format('c%s%s<Left><C-c>p<Right>', unpack(symbols)) 
+    local desc_text = "[W]rap [t]ext in symbols"
+    local cmd_line =  string.format('c%s<C-c>p$a%s<C-c>0i<BS><C-c>$', unpack(symbols))
+    local desc_line = "[W]rap [l]ine in symbols"
+    for key, symbol in pairs(symbols) do
+      -- Selected text (visual)
+      vim.keymap.set('v', symbol, cmd_text, { desc = desc_text, silent = true })
+      -- Selected text (normal)
+      vim.keymap.set('n', symbol, 'viw' .. cmd_text, { desc = desc_text, silent = true })
+      -- Selected line (visual)
+      vim.keymap.set('v', '<leader>' .. symbol, cmd_line, { desc = desc_line, silent = true })
+    end
   end 
-  end
+end
 
 return M
