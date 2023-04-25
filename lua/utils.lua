@@ -1,4 +1,4 @@
--- [[ Config utilities ]
+-- [[ Configure Utilities ]]
 
 local M = {}
 
@@ -38,7 +38,7 @@ M.set_default_colors = function()
   settings = require('settings.gui_settings')
   M.change_backgroundcolor(settings.current_bg)
   for key, color in pairs(settings.colors) do
-    vim.cmd('hi ' .. tostring(key) .. string.format(' %s=%s', unpack(color)))
+    vim.cmd(string.format('hi %s %s', key, color))
   end
 end
 

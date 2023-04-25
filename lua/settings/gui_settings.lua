@@ -2,6 +2,7 @@
 
 local M = {}
 
+
 -- COLORS
 -----------------------------------------------------------
 -- Theme
@@ -21,8 +22,17 @@ local transparent_at_startup = true
 M.default_bg =  M.theme[3]
 M.current_bg = transparent_at_startup and "NONE" or M.default_bg
 M.colors = {
-    -- key = { 'propery', 'value' }
-    NvimTreeWinSeparator = { 'guifg', '#505050' }
+    ['NvimTreeWinSeparator'] = "guifg=#505050",
+    ['BufferLineBuffer'] = "guifg=#5a5a5a",
+    ['BufferLineBufferSelected'] = "gui=bold",
+    -- ['BufferLineWarning'] = "guifg=#5a5a5a",
+    -- ['BufferLineInfo'] = "guifg=#5a5a5a",
+    -- ['BufferLineHint'] = "guifg=#5a5a5a",
+    -- ['BufferLineWarning'] = "guifg=#5a5a5a",
+    ['BufferLineInfoSelected'] = "guifg=#FFFFF gui=bold",
+    ['BufferLineHintSelected'] = "guifg=#FFFFF gui=bold",
+    ['BufferLineWarningSelected'] = "guifg=#FFFFF gui=bold",
+    ['BufferLineIndicatorSelected'] = "guifg=#1B1B1B guibg=#1B1B1B",
 }
 
 return M
