@@ -7,11 +7,11 @@ local M = {}
 -----------------------------------------------------------
 -- Theme
 M.theme = {
-    -- 'vscode', 'mofiqul/vscode.nvim', '#1e1e1e'
+    'vscode', 'mofiqul/vscode.nvim', '#1e1e1e'
     -- 'onedark', 'navarasu/onedark.nvim', '#262A2F'
-    'tokyonight', 'folke/tokyonight.nvim', '#242634'
+    -- 'tokyonight', 'folke/tokyonight.nvim', '#242634'
     -- 'everforest', 'sainnhe/everforest', '#282F34'
-    -- 'catppuccin-macchiato', 'catppuccin/nvim', '#212332'
+    -- 'catppuccin-mocha', 'catppuccin/nvim', '#212332'
     -- 'nightfly', 'bluz71/vim-nightfly-colors', '#0A1522'
     -- 'rose-pine-moon', 'rose-pine/neovim', '#1E1823'
 }
