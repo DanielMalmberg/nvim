@@ -14,6 +14,8 @@ M.theme = {
     -- 'catppuccin-mocha', 'catppuccin/nvim', '#212332'
     -- 'nightfly', 'bluz71/vim-nightfly-colors', '#0A1522'
     -- 'rose-pine-moon', 'rose-pine/neovim', '#1E1823'
+    -- 'quantum', 'tyrannicaltoucan/vim-quantum', '#1e1e1e'
+     -- 'ayu', 'ayu-theme/ayu-vim', '#1e1e1e'
 }
 
 -- Color settings 

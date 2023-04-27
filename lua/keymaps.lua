@@ -83,6 +83,8 @@ local keymaps = {
     normal_and_visual = {
         ['<C-k>'] = { '4k', "Faster scrolling (up)"},
         ['<C-j>'] = { '4j', "Faster scrolling (down)"},
+        ['<C-h>'] = { '4h', "Faster scrolling (left)" },
+        ['<C-l>'] = { '4l', "Faster scrolling (right)" }
     }
 }
 utils.apply_keymaps(keymaps)
