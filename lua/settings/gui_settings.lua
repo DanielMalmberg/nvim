@@ -52,10 +52,10 @@ M.light_theme = {
         ["BufferLineWarning"] = "guifg=#9ca0b0",
         ['BufferLineCloseButton'] = "guifg=#9ca0b0",
         ['BufferLineCloseButtonSelected'] = "guifg=#5a5a5a",
-        ['BufferLineBufferSelected'] = "guifg=#FF5A23 gui=none",
-        ['BufferLineInfoSelected'] = "guifg=#FF5A23 gui=none",
-        ['BufferLineHintSelected'] = "guifg=#FF5A23 gui=none",
-        ['BufferLineWarningSelected'] = "guifg=#FF5A23 gui=none",
+        ['BufferLineBufferSelected'] = "guifg=#5a5a5a gui=none",
+        ['BufferLineInfoSelected'] = "guifg=#5a5a5a gui=none",
+        ['BufferLineHintSelected'] = "guifg=#5a5a5a gui=none",
+        ['BufferLineWarningSelected'] = "guifg=#5a5a5a gui=none",
     }
 }
 
