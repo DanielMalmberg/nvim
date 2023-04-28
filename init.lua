@@ -9,7 +9,7 @@ require('features')
 -----------------------------------------------------------
 
 -- Backgroundcolor
-require('utils').set_default_colors()
+require('utils').set_custom_colors()
 
 -- Diagnostics
 require'toggle_lsp_diagnostics'.init({ start_on = false })

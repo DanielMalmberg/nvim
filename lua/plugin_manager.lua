@@ -1,8 +1,8 @@
 -- [[ Configure Plugin manager ]]
 
-utils = require('utils')
-local theme = utils.get_theme()[1]
-local theme_plugin = utils.get_theme()[2]
+local utils = require('utils')
+local current_theme = utils.get_validated_theme(true)
+local optional_theme = utils.get_validated_theme(false)
 
 -- `:help lazy.nvim.txt`
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -22,12 +22,13 @@ require('lazy').setup({
   -- THEMES AND GUI
   -----------------------------------------------------------
   {
-    theme_plugin,
+    current_theme.plugin.source,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme(theme)
+      vim.cmd.colorscheme(current_theme.plugin.name)
     end,
   },
+  optional_theme.plugin.source,
 
   -- File explorer 
   "nvim-tree/nvim-tree.lua",
@@ -42,7 +43,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = theme,
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
