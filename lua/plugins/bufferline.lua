@@ -6,7 +6,7 @@ require("bufferline").setup{
     diagnostics = "nvim_lsp",
     diagnostics_indicator = function(count, level)
       if level:match("error") then
-        return " " .. count 
+        return " "
       else
         return ""
       end
