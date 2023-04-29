@@ -1,10 +1,13 @@
-require('plugins')
-require('settings')
-require('features')
-
+-- Dependencies
+-----------------------------------------------------------
+-- ripgrep (for Telescope Live Grep)
+-- Universal Ctags (for Tagbar - https://ctags.io/)
 
 -- Initialize
 -----------------------------------------------------------
+require('plugins')
+require('settings')
+require('features')
 
 -- GUI 
 require('utils.gui').set_custom_colors()
