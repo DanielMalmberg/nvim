@@ -44,7 +44,7 @@ M.light_theme = {
     },
     colors = {
         ['BufferLineIndicatorSelected'] = "guifg=#EDEFF3 guibg=#EDEFF3",
-        ['NvimTreeWinSeparator'] = "guifg=#EDEFF3",
+        ['NvimTreeWinSeparator'] = "guifg=#B4B8C4",
         ['BufferLineBackground'] = "guifg=#9ca0b0",
         ['BufferLineBuffer'] = "guifg=#9ca0b0",
         ["BufferLineHint"] = "guifg=#9ca0b0",

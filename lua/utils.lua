@@ -3,15 +3,12 @@
 local M = {}
 local gui_settings = require('settings.gui_settings')
 
-M.get_validated_theme = function(current)
-  local theme = {} 
+local function get_theme(current)
+  local theme = {}
   if current then
     theme = gui_settings.use_dark_theme and gui_settings.dark_theme or gui_settings.light_theme
   else
-    theme = gui_settings.use_dark_theme and gui_settings.light_theme or gui_settings.dark_theme
-  end  
-  if #theme.plugin < 3 and #theme.plugin > 4 then
-    error('Error - GUI theme needs 3-4 values specified - name, plugin, backgroundcolor and lualine name (optional)')
+    theme = gui_settings.use_dark_theme and gui_settings.light_theme or gui_settings.dark_theme 
   end
   if rawget(theme.plugin, 'lualine') == nil then
     theme.plugin['lualine'] = theme.plugin.name
@@ -19,9 +16,14 @@ M.get_validated_theme = function(current)
   return theme
 end
 
-local function get_current_theme()
-  return gui_settings.use_dark_theme and gui_settings.dark_theme or gui_settings.light_theme
+M.get_current_theme = function()
+  return get_theme(true)
 end
+
+M.get_optional_theme = function()
+  return get_theme(false)
+end
+
 
 M.change_backgroundcolor = function(color)
   local backgrounds = {
@@ -50,21 +52,21 @@ end
 M.set_custom_colors = function()
   vim.o.background = gui_settings.use_dark_theme and 'dark' or 'light'
   M.change_backgroundcolor(gui_settings.current_bg)
-  for key, color in pairs(get_current_theme().colors) do
+  for key, color in pairs(M.get_current_theme().colors) do
     vim.cmd(string.format('hi %s %s', key, color))
   end
 end
 
 M.toggle_theme = function()
   gui_settings.use_dark_theme = not gui_settings.use_dark_theme
-  current_theme = get_current_theme()
+  current_theme = M.get_current_theme()
   vim.cmd(string.format('colorscheme %s', current_theme.plugin.name))
   gui_settings.current_bg = gui_settings.use_dark_theme and "NONE" or current_theme.plugin.bg
   M.set_custom_colors()
 end
 
 M.toggle_transparency = function()
-  local default_bg = get_current_theme().plugin.bg 
+  local default_bg = M.get_current_theme().plugin.bg 
   if gui_settings.current_bg == "NONE" then
     gui_settings.current_bg = default_bg
   else
