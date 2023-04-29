@@ -19,22 +19,27 @@ M.dark_theme = {
         -- name = 'catppuccin-mocha', lualine = 'catppuccin', source = 'catppuccin/nvim', bg = '#212332'
     },
     colors = {
-        ['BufferLineIndicatorSelected'] = "guifg=#1B1B1B guibg=#1B1B1B",
+        -- General
+        ['BufferLineInfo'] = "guifg=#5a5a5a",
+        ['BufferLineHint'] = "guifg=#5a5a5a",
+        ['BufferLineWarning'] = "guifg=#5a5a5a",
+        ['BufferLineDuplicate'] = "guifg=#5a5a5a gui=none",
+        ['BufferLineCloseButton'] = "guifg=#5a5a5a",
         ['NvimTreeWinSeparator'] = "guifg=#505050",
-        ['BufferLineBufferSelected'] = "gui=none",
         ['BufferLineBackground'] = "guifg=#5a5a5a",
+        -- Visible
         ['BufferLineBufferVisible'] = "guifg=#5a5a5a",
         ["BufferLineHintVisible"] = "guifg=#5a5a5a",
         ["BufferLineInfoVisible"] = "guifg=#5a5a5a",
         ["BufferLineWarningVisible"] = "guifg=#5a5a5a",
         ['BufferLineCloseButtonVisible'] = "guifg=#5a5a5a",
-        ['BufferLineCloseButton'] = "guifg=#5a5a5a",
-        ['BufferLineInfo'] = "guifg=#5a5a5a",
-        ['BufferLineHint'] = "guifg=#5a5a5a",
-        ['BufferLineWarning'] = "guifg=#5a5a5a",
+        ['BufferLineDuplicateSelected'] = "guifg=grey gui=none",
+        -- Selected
+        ['BufferLineBufferSelected'] = "gui=none",
         ['BufferLineInfoSelected'] = "guifg=#FFFFF gui=none",
         ['BufferLineHintSelected'] = "guifg=#FFFFF gui=none",
         ['BufferLineWarningSelected'] = "guifg=#FFFFF gui=none",
+        ['BufferLineIndicatorSelected'] = "guifg=#1B1B1B guibg=#1B1B1B",
     }
 }
 
@@ -43,19 +48,21 @@ M.light_theme = {
     name = 'catppuccin-latte', lualine = 'catppuccin', source = 'catppuccin/nvim', bg = '#EDEFF3'
     },
     colors = {
-        ['BufferLineIndicatorSelected'] = "guifg=#EDEFF3 guibg=#EDEFF3",
-        ['NvimTreeWinSeparator'] = "guifg=#B4B8C4",
-        ['BufferLineBackground'] = "guifg=#9ca0b0",
+        -- General
         ['BufferLineBuffer'] = "guifg=#9ca0b0",
         ["BufferLineHint"] = "guifg=#9ca0b0",
         ["BufferLineInfo"] = "guifg=#9ca0b0",
         ["BufferLineWarning"] = "guifg=#9ca0b0",
         ['BufferLineCloseButton'] = "guifg=#9ca0b0",
-        ['BufferLineCloseButtonSelected'] = "guifg=#5a5a5a",
+        ['NvimTreeWinSeparator'] = "guifg=#B4B8C4",
+        ['BufferLineBackground'] = "guifg=#9ca0b0",
+        -- Selected
         ['BufferLineBufferSelected'] = "guifg=#5a5a5a gui=none",
         ['BufferLineInfoSelected'] = "guifg=#5a5a5a gui=none",
         ['BufferLineHintSelected'] = "guifg=#5a5a5a gui=none",
         ['BufferLineWarningSelected'] = "guifg=#5a5a5a gui=none",
+        ['BufferLineCloseButtonSelected'] = "guifg=#5a5a5a",
+        ['BufferLineIndicatorSelected'] = "guifg=#EDEFF3 guibg=#EDEFF3",
     }
 }
 
