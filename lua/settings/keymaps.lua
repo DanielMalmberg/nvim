@@ -80,6 +80,8 @@ local keymaps = {
         ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" },
         --Tagbar
         ['<C-ä>'] = { ':TagbarToggle<CR>', "Show/hide the file outline"},
+        ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
+        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag"},
 
     },
     normal_and_visual = {
