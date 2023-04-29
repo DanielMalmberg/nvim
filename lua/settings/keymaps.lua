@@ -43,7 +43,6 @@ local keymaps = {
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', "Replace all occurrences of current word in current file" },
         ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program"},
         
-        
         -- PLUGINS 
         ---------------------------------------
         -- Bufferline 
@@ -68,7 +67,7 @@ local keymaps = {
         ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
         ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
         -- Nvim-tree
-        ['<C-n>'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" },
+        ['<C-l>'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" },
         -- Debugger
         ['<F5>'] = { dap.continue, "Debugger - Continue" },
         ['<F1>'] = { dap.step_over, "Debugger - Step over" },
@@ -78,7 +77,10 @@ local keymaps = {
         ['<leader>B'] = { function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end, "Debugger - Toggle breakpoint (with condition)" },
         -- Diffview (Git)
         ['<leader>git'] = { ":DiffviewOpen<CR>", "View all git changes (open)" },
-        ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" }
+        ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" },
+        --Tagbar
+        ['<C-ä>'] = { ':TagbarToggle<CR>', "Show/hide the file outline"},
+
     },
     normal_and_visual = {
         ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },

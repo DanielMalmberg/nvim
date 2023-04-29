@@ -32,6 +32,9 @@ require('lazy').setup({
 
   -- File explorer 
   "nvim-tree/nvim-tree.lua",
+
+  -- Tagbar
+  "preservim/tagbar",
   
   -- Tabs
   {'akinsho/bufferline.nvim', version = "*"},
