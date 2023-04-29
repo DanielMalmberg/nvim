@@ -62,7 +62,7 @@ M.toggle_theme = function()
   gui_settings.use_dark_theme = not gui_settings.use_dark_theme
   current_theme = M.get_current_theme()
   vim.cmd(string.format('colorscheme %s', current_theme.plugin.name))
-  gui_settings.current_bg = gui_settings.use_dark_theme and "NONE" or current_theme.plugin.bg
+  gui_settings.current_bg = current_theme.plugin.bg -- gui_settings.use_dark_theme and "NONE" or current_theme.plugin.bg
   M.set_custom_colors()
 end
 

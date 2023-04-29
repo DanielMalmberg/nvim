@@ -8,8 +8,10 @@ require('features')
 -- Initialize
 -----------------------------------------------------------
 
--- Backgroundcolor
+-- GUI 
 require('utils/gui_utils').set_custom_colors()
+
+require('settings/gui_settings').setup_themes()
 
 -- Diagnostics
 require'toggle_lsp_diagnostics'.init({ start_on = false })

@@ -59,8 +59,21 @@ M.light_theme = {
     }
 }
 
+-- Theme options
+M.setup_themes = function() 
+    require('catppuccin').setup({
+    	no_italic = true,
+    	no_bold = true,
+    	integrations = {
+            cmp = true,
+            nvimtree = true,
+            telescope = true
+    	}
+    })
+end
+
 -- Default settings 
 M.use_dark_theme = true
-M.current_bg = "NONE"
+M.current_bg = M.dark_theme.plugin.bg --"NONE"
 
 return M
