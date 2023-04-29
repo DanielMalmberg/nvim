@@ -1,2 +1,3 @@
-require('settings.vim_settings')
-require('settings.gui_settings')
+require('settings.vim')
+require('settings.themes')
+require('settings.keymaps')

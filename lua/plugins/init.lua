@@ -1,3 +1,4 @@
+require('plugins.plugin_manager')
 require('plugins.mason_lspconfig')
 require('plugins.neodev')
 require('plugins.nvim-cmp')

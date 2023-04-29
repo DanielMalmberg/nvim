@@ -1,7 +1,7 @@
 -- [[ Basic Keymaps ]]
 -- `:Telescope keymaps`
 
-local nav_utils = require('utils/nav_utils')
+local nav_utils = require('utils.navigation')
 local dap = require('dap')
 
 -- ['input'] = { 'output', "description" }
@@ -38,7 +38,7 @@ local keymaps = {
         -- FUNCTIONS 
         ---------------------------------------
         ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
-        ['<S-u>'] = { "<cmd>lua require('utils/gui_utils').toggle_transparency()<CR>", "Toggle transparency" },
+        ['<S-u>'] = { "<cmd>lua require('utils.gui').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', "Replace all occurrences of current word in current file" },
         ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program"},
@@ -49,7 +49,7 @@ local keymaps = {
         -- Bufferline 
         ['<Tab>'] = { ':BufferLineCycleNext<CR>', "" },
         ['<S-Tab>'] = { ':BufferLineCyclePrev<CR>', "" },
-        ["<leader>x"] = { ":lua require('utils/nav_utils').close_current_buffer()<CR>", "" },
+        ["<leader>x"] = { ":lua require('utils.navigation').close_current_buffer()<CR>", "" },
         -- Toggle LSP warnings and errors
         ['<leader>tt'] = { ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
         ['<leader>lt'] = { ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
@@ -81,7 +81,7 @@ local keymaps = {
         ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" }
     },
     normal_and_visual = {
-        ['<C-S-l>'] = { ":lua require('utils/gui_utils').toggle_theme()<CR>" },
+        ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
         ['<C-k>'] = { '4k', "Faster scrolling (up)"},
         ['<C-j>'] = { '4j', "Faster scrolling (down)"},
         ['<C-h>'] = { '4h', "Faster scrolling (left)" },

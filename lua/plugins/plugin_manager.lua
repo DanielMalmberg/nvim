@@ -1,6 +1,6 @@
 -- [[ Configure Plugin manager ]]
 
-local gui_utils = require('utils/gui_utils')
+local gui_utils = require('utils.gui')
 local current_theme = gui_utils.get_current_theme(true)
 local optional_theme = gui_utils.get_optional_theme(true)
 
