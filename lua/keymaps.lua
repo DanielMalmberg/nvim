@@ -38,7 +38,6 @@ local keymaps = {
         -- FUNCTIONS 
         ---------------------------------------
         ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
-        ['<C-S-l>'] = { ":lua require('utils/gui_utils').toggle_theme()<CR>" },
         ['<S-u>'] = { "<cmd>lua require('utils/gui_utils').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', "Replace all occurrences of current word in current file" },
@@ -82,6 +81,7 @@ local keymaps = {
         ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" }
     },
     normal_and_visual = {
+        ['<C-S-l>'] = { ":lua require('utils/gui_utils').toggle_theme()<CR>" },
         ['<C-k>'] = { '4k', "Faster scrolling (up)"},
         ['<C-j>'] = { '4j', "Faster scrolling (down)"},
         ['<C-h>'] = { '4h', "Faster scrolling (left)" },

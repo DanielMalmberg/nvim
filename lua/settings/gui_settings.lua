@@ -74,6 +74,7 @@ end
 
 -- Default settings 
 M.use_dark_theme = true
-M.current_bg = M.dark_theme.plugin.bg --"NONE"
+M.current_bg = "NONE"
+-- M.current_bg = M.dark_theme.plugin.bg
 
 return M
