@@ -1,6 +1,14 @@
 -- [[ Basic Keymaps ]]
 -- `:Telescope keymaps`
 
+-- UNBIND UNNECESSARY KEYMAPS 
+----------------------------------
+vim.api.nvim_set_keymap('n', '<C-l>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '<C-l>', '<Nop>', { noremap = true, silent = true })
+
+
+-- CUSTOM KEYMAPS 
+----------------------------------
 local nav_utils = require('utils.navigation')
 local dap = require('dap')
 
@@ -110,4 +118,3 @@ wrap_text_symbols = {
     {'{', '}'},
 }
 nav_utils.apply_text_wrapping_keymaps(wrap_text_symbols)
-
