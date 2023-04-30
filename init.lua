@@ -15,3 +15,6 @@ require('settings.themes').setup_themes()
 
 -- Diagnostics
 require'toggle_lsp_diagnostics'.init({ start_on = false })
+
+-- Use this to automatically hide the startup text 
+-- vim.cmd(':call feedkeys("<S-u>")')

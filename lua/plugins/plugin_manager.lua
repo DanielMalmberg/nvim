@@ -1,8 +1,8 @@
 -- [[ Configure Plugin manager ]]
 
 local gui_utils = require('utils.gui')
-local current_theme = gui_utils.get_current_theme(true)
-local optional_theme = gui_utils.get_optional_theme(true)
+local current_theme = gui_utils.get_current_theme()
+local optional_theme = gui_utils.get_optional_theme()
 
 -- `:help lazy.nvim.txt`
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
