@@ -75,7 +75,7 @@ local keymaps = {
         ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
         ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
         -- Nvim-tree
-        ['<C-ö>'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" },
+        ['˛'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- opt + h
         -- Debugger
         ['<F5>'] = { dap.continue, "Debugger - Continue" },
         ['<F1>'] = { dap.step_over, "Debugger - Step over" },
@@ -87,7 +87,7 @@ local keymaps = {
         ['<leader>git'] = { ":DiffviewOpen<CR>", "View all git changes (open)" },
         ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" },
         --Tagbar
-        ["<C-'>"] = { ':TagbarToggle<CR>', "Show/hide the file outline"},
+        ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline"}, -- opt + l
         ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
         ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag"},
 
