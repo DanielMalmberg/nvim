@@ -55,6 +55,7 @@ M.light_theme = {
         ["BufferLineWarning"] = "guifg=#9ca0b0",
         ['BufferLineCloseButton'] = "guifg=#9ca0b0",
         ['NvimTreeWinSeparator'] = "guifg=#B4B8C4",
+        ['NvimTreeEndOfBuffer'] = "guifg=#EDEFF3",
         ['BufferLineBackground'] = "guifg=#9ca0b0",
         -- Selected
         ['BufferLineBufferSelected'] = "guifg=#5a5a5a gui=none",
