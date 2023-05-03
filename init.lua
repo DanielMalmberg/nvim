@@ -9,12 +9,15 @@ require('plugins')
 require('settings')
 require('features')
 
--- GUI 
+-- Setup themes and colors 
 require('utils.gui').set_custom_colors()
 require('settings.themes').setup_themes()
 
--- Diagnostics
-require'toggle_lsp_diagnostics'.init({ start_on = false })
+-- Disable Neovim intro text
+vim.opt.shortmess:append("sI")
 
--- Use this to automatically hide the startup text 
--- vim.cmd(':call feedkeys("<S-u>")')
+-- Disable tilde on end of buffer
+vim.cmd [[let &fcs='eob: ']]
+
+-- Disable diagnostics
+require'toggle_lsp_diagnostics'.init({ start_on = false })
