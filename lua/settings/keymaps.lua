@@ -62,7 +62,7 @@ local keymaps = {
         ['<leader>lt'] = { ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
         -- Telecope (`h telescope.builtin`)
         ['<leader>?'] = { require('telescope.builtin').oldfiles, "[?] Find recently opened files" },
-        ['<leader><space>'] = { require('telescope.builtin').buffers, "[ ] Find existing buffers" },
+        ['<C-b>'] = { require('telescope.builtin').buffers, "Find existing [b]uffers" },
         ['<leader><C-f>'] = { ':Telescope current_buffer_fuzzy_find<CR>', "[/] Fuzzily search in current buffer" },
         ['<C-f>'] = { require('telescope.builtin').live_grep, "[S]earch by [G]rep" },
         ['<C-p>'] = { require('telescope.builtin').find_files, "[S]earch [F]iles" },
