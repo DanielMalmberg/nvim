@@ -146,7 +146,7 @@ require('lazy').setup({
   -- Toggleable terminal window
   "akinsho/toggleterm.nvim",
 
-  -- Filepath 
+  -- Filepath
   -- {
   --   "utilyre/barbecue.nvim",
   --   name = "barbecue",
@@ -163,6 +163,9 @@ require('lazy').setup({
 
   -- ENHANCED TYPING
   -----------------------------------------------------------
+  -- Highlight current word occurrences
+  "RRethy/vim-illuminate",
+
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
