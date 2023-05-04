@@ -5,7 +5,7 @@ function replace_all_text(text, replacement)
   text = vim.fn.escape(text, '\\')
   replacement = vim.fn.escape(replacement, '\\')
 
-  vim.cmd(":cdo s/".. text .. '/' .. replacement .. "/g")
+  vim.cmd(":cdo s/" .. text .. '/' .. replacement .. "/g")
   vim.cmd(':call feedkeys("\\<C-w>o")')
   vim.schedule(function()
     vim.notify("All instances of '" .. text .. "' were replaced with '" .. replacement .. "'")

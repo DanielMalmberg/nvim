@@ -6,7 +6,7 @@ require('telescope').setup {
     mappings = {
       i = {
         lsp_references = {
-        cwd = vim.loop.cwd(),
+          cwd = vim.loop.cwd(),
         },
         ['<C-u>'] = false,
         ['<C-d>'] = false,

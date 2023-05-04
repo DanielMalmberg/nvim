@@ -1,13 +1,13 @@
 -- [[ Basic Keymaps ]]
 -- `:Telescope keymaps`
 
--- UNBIND UNNECESSARY KEYMAPS 
+-- UNBIND UNNECESSARY KEYMAPS
 ----------------------------------
 vim.api.nvim_set_keymap('n', '<C-l>', '<Nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<C-l>', '<Nop>', { noremap = true, silent = true })
 
 
--- CUSTOM KEYMAPS 
+-- CUSTOM KEYMAPS
 ----------------------------------
 local nav_utils = require('utils.navigation')
 local dap = require('dap')
@@ -20,7 +20,7 @@ local keymaps = {
         ['{'] = { '{}<Left>', "" },
         ['"'] = { '""<Left>', "" },
         ["'"] = { "''<Left>", "" },
-        ['<C-c>'] = { '<ESC>', ""}
+        ['<C-c>'] = { '<ESC>', "" }
     },
     visual = {
         ['<Tab>'] = { '>gv', "Indent selection in visual mode" },
@@ -42,18 +42,17 @@ local keymaps = {
         ['<Space>'] = { '<Nop>', "Disable Space-key in normal" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in visual" },
         ['<leader>p'] = { '\"_dP', "Paste and keep text in the yank register" },
-
-        -- FUNCTIONS 
+        -- FUNCTIONS
         ---------------------------------------
         ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
         ['<S-u>'] = { "<cmd>lua require('utils.gui').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
-        ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>', "Replace all occurrences of current word in current file" },
-        ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program"},
-        
-        -- PLUGINS 
+        ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
+            "Replace all occurrences of current word in current file" },
+        ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
+        -- PLUGINS
         ---------------------------------------
-        -- Bufferline 
+        -- Bufferline
         ['<Tab>'] = { ':BufferLineCycleNext<CR>', "" },
         ['<S-Tab>'] = { ':BufferLineCyclePrev<CR>', "" },
         ["<leader>x"] = { ":lua require('utils.navigation').close_current_buffer()<CR>", "" },
@@ -83,20 +82,20 @@ local keymaps = {
         ['<F2>'] = { dap.step_into, "Debugger - Step into" },
         ['<F3>'] = { dap.step_out, "Debugger - Step out" },
         ['<leader>b'] = { dap.toggle_breakpoint, "Debugger - Toggle breakpoint" },
-        ['<leader>B'] = { function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end, "Debugger - Toggle breakpoint (with condition)" },
+        ['<leader>B'] = { function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end,
+            "Debugger - Toggle breakpoint (with condition)" },
         -- Diffview (Git)
         ['<leader>git'] = { ":DiffviewOpen<CR>", "View all git changes (open)" },
         ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" },
         --Tagbar
-        ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline"}, -- opt + l
+        ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- opt + l
         ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
-        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag"},
-
+        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
     },
     normal_and_visual = {
         ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
-        ['<C-k>'] = { '4k', "Faster scrolling (up)"},
-        ['<C-j>'] = { '4j', "Faster scrolling (down)"},
+        ['<C-k>'] = { '4k', "Faster scrolling (up)" },
+        ['<C-j>'] = { '4j', "Faster scrolling (down)" },
         ['<C-h>'] = { '4h', "Faster scrolling (left)" },
         ['<C-l>'] = { '4l', "Faster scrolling (right)" }
     }
@@ -111,11 +110,11 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 wrap_text_symbols = {
-    {"\'", "\'"},
-    {'\"', '\"'},
-    {'*', '*'},
-    {'(', ')'},
-    {'[', ']'},
-    {'{', '}'},
+    { "\'", "\'" },
+    { '\"', '\"' },
+    { '*',  '*' },
+    { '(',  ')' },
+    { '[',  ']' },
+    { '{',  '}' },
 }
 nav_utils.apply_text_wrapping_keymaps(wrap_text_symbols)

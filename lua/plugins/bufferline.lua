@@ -1,6 +1,6 @@
 -- [[ Configure Bufferline ]]
 
-require("bufferline").setup{
+require("bufferline").setup {
   options = {
     color_icons = true,
     diagnostics = "nvim_lsp",

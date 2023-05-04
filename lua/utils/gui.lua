@@ -9,7 +9,7 @@ local function get_theme(current)
   if current then
     theme = themes.use_dark_theme and themes.dark_theme or themes.light_theme
   else
-    theme = themes.use_dark_theme and themes.light_theme or themes.dark_theme 
+    theme = themes.use_dark_theme and themes.light_theme or themes.dark_theme
   end
   if rawget(theme.plugin, 'lualine') == nil then
     theme.plugin['lualine'] = theme.plugin.name
@@ -68,7 +68,7 @@ M.toggle_theme = function()
 end
 
 M.toggle_transparency = function()
-  local default_bg = M.get_current_theme().plugin.bg 
+  local default_bg = M.get_current_theme().plugin.bg
   if themes.current_bg == "NONE" then
     themes.current_bg = default_bg
   else

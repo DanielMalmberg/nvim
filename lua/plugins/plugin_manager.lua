@@ -30,14 +30,14 @@ require('lazy').setup({
   },
   optional_theme.plugin.source,
 
-  -- File explorer 
+  -- File explorer
   "nvim-tree/nvim-tree.lua",
 
   -- Tagbar
   "preservim/tagbar",
-  
+
   -- Tabs
-  {'akinsho/bufferline.nvim', version = "*"},
+  { 'akinsho/bufferline.nvim', version = "*" },
 
   -- Set lualine as statusline
   -- `:help lualine.txt`
@@ -56,16 +56,16 @@ require('lazy').setup({
   -- FEATURES
   -----------------------------------------------------------
   -- LSP Configuration & Plugins
-  { 
+  {
     'neovim/nvim-lspconfig',
-    dependencies = 
+    dependencies =
     {
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       'folke/neodev.nvim',
       -- Toggle LSP warnings and errors
@@ -98,7 +98,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',   opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -121,7 +121,7 @@ require('lazy').setup({
   -- Highlight, edit, and navigate code
   {
     'nvim-treesitter/nvim-treesitter',
-    dependencies = 
+    dependencies =
     {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
@@ -131,31 +131,31 @@ require('lazy').setup({
   {
     'mfussenegger/nvim-dap',
     dependencies = {
-    -- Creates a beautiful debugger UI
-    'rcarriga/nvim-dap-ui',
+      -- Creates a beautiful debugger UI
+      'rcarriga/nvim-dap-ui',
 
-    -- Installs the debug adapters for you
-    'williamboman/mason.nvim',
-    'jay-babu/mason-nvim-dap.nvim',
+      -- Installs the debug adapters for you
+      'williamboman/mason.nvim',
+      'jay-babu/mason-nvim-dap.nvim',
 
-    -- Add your own debuggers here
-    'leoluz/nvim-dap-go',
+      -- Add your own debuggers here
+      'leoluz/nvim-dap-go',
     }
   },
 
   -- Toggleable terminal window
   "akinsho/toggleterm.nvim",
 
-  -- ENHANCED TYPING 
+  -- ENHANCED TYPING
   -----------------------------------------------------------
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
     dependencies =
     {
-        'hrsh7th/cmp-nvim-lsp',
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip'
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip'
     }
   },
 

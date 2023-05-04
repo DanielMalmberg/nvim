@@ -46,7 +46,7 @@ M.dark_theme = {
 
 M.light_theme = {
     plugin = {
-    name = 'catppuccin-latte', lualine = 'catppuccin', source = 'catppuccin/nvim', bg = '#EDEFF3'
+        name = 'catppuccin-latte', lualine = 'catppuccin', source = 'catppuccin/nvim', bg = '#EDEFF3'
     },
     colors = {
         -- General
@@ -69,19 +69,19 @@ M.light_theme = {
 }
 
 -- Theme options
-M.setup_themes = function() 
+M.setup_themes = function()
     require('catppuccin').setup({
-    	no_italic = true,
-    	no_bold = true,
-    	integrations = {
+        no_italic = true,
+        no_bold = true,
+        integrations = {
             cmp = true,
             nvimtree = true,
             telescope = true
-    	}
+        }
     })
 end
 
--- Default settings 
+-- Default settings
 M.use_dark_theme = true
 M.current_bg = "NONE"
 -- M.current_bg = M.dark_theme.plugin.bg

@@ -9,7 +9,7 @@ require('plugins')
 require('settings')
 require('features')
 
--- Setup themes and colors 
+-- Setup themes and colors
 require('utils.gui').set_custom_colors()
 require('settings.themes').setup_themes()
 
@@ -20,4 +20,4 @@ vim.opt.shortmess:append("sI")
 vim.cmd [[let &fcs='eob: ']]
 
 -- Disable diagnostics
-require'toggle_lsp_diagnostics'.init({ start_on = false })
+require 'toggle_lsp_diagnostics'.init({ start_on = false })
