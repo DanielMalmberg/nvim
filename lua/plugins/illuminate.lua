@@ -7,7 +7,7 @@ require('illuminate').configure({
         'regex',
     },
     -- // delay: delay in milliseconds
-    delay = 300,
+    delay = 500,
   
     -- // filetype_overrides: filetype specific overrides.
     -- // The keys are strings to represent the filetype while the values are tables that

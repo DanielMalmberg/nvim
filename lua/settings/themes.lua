@@ -28,6 +28,10 @@ M.dark_theme = {
         ['BufferLineBackground'] = "guifg=#5a5a5a",
         ['NvimTreeWinSeparator'] = "guifg=#505050",
         ['IndentBlanklineContextChar'] = "guifg=#949494",
+        -- ['IlluminatedWordRead'] = "gui=none guibg=#505050",
+        -- ['IlluminatedWordText'] = "gui=none guibg=#505050",
+        -- ['IlluminatedWordWrite'] = "gui=none guibg=#505050",
+
         -- Visible
         ['BufferLineBufferVisible'] = "guifg=#5a5a5a",
         ["BufferLineHintVisible"] = "guifg=#5a5a5a",

@@ -91,6 +91,7 @@ local keymaps = {
         ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- opt + l
         ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
         ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
+        ['<C-i>'] = { ':IlluminateToggle<CR>', "Toggle illuminate (highlight) plugin" }
     },
     normal_and_visual = {
         ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
