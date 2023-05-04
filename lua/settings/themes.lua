@@ -25,8 +25,9 @@ M.dark_theme = {
         ['BufferLineWarning'] = "guifg=#5a5a5a",
         ['BufferLineDuplicate'] = "guifg=#5a5a5a gui=none",
         ['BufferLineCloseButton'] = "guifg=#5a5a5a",
-        ['NvimTreeWinSeparator'] = "guifg=#505050",
         ['BufferLineBackground'] = "guifg=#5a5a5a",
+        ['NvimTreeWinSeparator'] = "guifg=#505050",
+        ['IndentBlanklineContextChar'] = "guifg=#949494",
         -- Visible
         ['BufferLineBufferVisible'] = "guifg=#5a5a5a",
         ["BufferLineHintVisible"] = "guifg=#5a5a5a",
