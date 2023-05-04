@@ -146,6 +146,21 @@ require('lazy').setup({
   -- Toggleable terminal window
   "akinsho/toggleterm.nvim",
 
+  -- Filepath 
+  -- {
+  --   "utilyre/barbecue.nvim",
+  --   name = "barbecue",
+  --   version = "*",
+  --   dependencies = {
+  --     "SmiteshP/nvim-navic"
+  --   },
+  --   opts = {
+  --     theme = {
+  --       normal = { bg="none"}
+  --     }
+  --   },
+  -- },
+
   -- ENHANCED TYPING
   -----------------------------------------------------------
   -- Autocompletion
