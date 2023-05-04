@@ -68,7 +68,8 @@ local keymaps = {
         ['<C-p>'] = { require('telescope.builtin').find_files, "[S]earch [F]iles" },
         ['<leader>sh'] = { require('telescope.builtin').help_tags, "[S]earch [H]elp" },
         ['<leader>sw'] = { require('telescope.builtin').grep_string, "[S]earch current [W]ord" },
-        ['<leader>sd'] = { require('telescope.builtin').diagnostics, "[S]earch [D]iagnostics" },
+        ['<leader>wd'] = { require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics" },
+        ['<leader>ds'] = { require('telescope.builtin').lsp_document_symbols, "LSP [D]ocument [S]ymbols" },
         -- Diagnostic keymaps
         ['[d'] = { vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
         [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
