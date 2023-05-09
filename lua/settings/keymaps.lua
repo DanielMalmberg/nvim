@@ -95,9 +95,9 @@ local keymaps = {
         ['<leader>i'] = { ':IlluminateToggle<CR>', "Toggle illuminate (highlight) plugin" },
         -- Hop
         ['<S-h>'] = {'<Nop>', "Disable regular shift+h" },
-        ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
-        ['<S-h><S-w>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
-        ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
+        ['<S-h>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
+        -- ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
+        -- ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
     },
     normal_and_visual = {
         ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
