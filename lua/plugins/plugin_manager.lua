@@ -171,6 +171,13 @@ require('lazy').setup({
   -- Highlight current word occurrences
   "RRethy/vim-illuminate",
 
+  {
+    'phaazon/hop.nvim',
+    config = function()
+      require('hop').setup{}
+    end
+  },
+
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',

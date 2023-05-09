@@ -92,15 +92,20 @@ local keymaps = {
         ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
         ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
         -- illuminate
-        ['<leader>i'] = { ':IlluminateToggle<CR>', "Toggle illuminate (highlight) plugin" }
+        ['<leader>i'] = { ':IlluminateToggle<CR>', "Toggle illuminate (highlight) plugin" },
+        -- Hop
+        ['<S-h>'] = {'<Nop>', "Disable regular shift+h" },
+        ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
+        ['<S-h><S-w>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
+        ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
     },
     normal_and_visual = {
         ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
         ['<C-k>'] = { '4k', "Faster scrolling (up)" },
         ['<C-j>'] = { '4j', "Faster scrolling (down)" },
         ['<C-h>'] = { '4h', "Faster scrolling (left)" },
-        ['<C-l>'] = { '4l', "Faster scrolling (right)" }
-    }
+        ['<C-l>'] = { '4l', "Faster scrolling (right)" },
+    },
 }
 nav_utils.apply_keymaps(keymaps)
 
