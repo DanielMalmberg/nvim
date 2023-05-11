@@ -9,9 +9,15 @@ require('plugins')
 require('settings')
 require('features')
 
--- Setup themes and colors
+-- Setup colors
 require('utils.gui').set_custom_colors()
+
+-- Setup themes
 require('settings.themes').setup_themes()
+
+-- Vim GUI settings (set here in case they are overridden by plugins)
+vim.cmd('set noshowmode')
+vim.cmd('set number')
 
 -- Disable Neovim intro text
 vim.opt.shortmess:append("sI")
