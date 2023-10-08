@@ -61,16 +61,49 @@ require('lazy').setup({
   -- FEATURES
   -----------------------------------------------------------
   -- LSP Configuration & Plugins
+  -- {
+  --   'neovim/nvim-lspconfig',
+  --   dependencies =
+  --   {
+  --     -- Automatically install LSPs to stdpath for neovim
+  --     { 'williamboman/mason.nvim', config = true },
+  --     'williamboman/mason-lspconfig.nvim',
+  --
+  --     -- Useful status updates for LSP
+  --     { 'j-hui/fidget.nvim',       opts = {} },
+  --
+  --     'folke/neodev.nvim',
+  --     -- Toggle LSP warnings and errors
+  --     'folke/lsp-trouble.nvim',
+  --     -- Required for lsp-trouble.nvim
+  --     'kyazdani42/nvim-web-devicons',
+  --     'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+  --   },
+  -- },
+
   {
-    'neovim/nvim-lspconfig',
-    dependencies =
-    {
-      -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true },
-      'williamboman/mason-lspconfig.nvim',
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    dependencies = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {                                      -- Optional
+        'williamboman/mason.nvim',
+        build = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+        config = true
+      },
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
       -- Useful status updates for LSP
       { 'j-hui/fidget.nvim',       opts = {} },
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'L3MON4D3/LuaSnip'},     -- Required
+      {'saadparwaiz1/cmp_luasnip'},
 
       'folke/neodev.nvim',
       -- Toggle LSP warnings and errors
@@ -78,7 +111,7 @@ require('lazy').setup({
       -- Required for lsp-trouble.nvim
       'kyazdani42/nvim-web-devicons',
       'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-    },
+    }
   },
 
   -- Git related plugins
@@ -101,6 +134,8 @@ require('lazy').setup({
       },
     },
   },
+
+  'mbbill/undotree',
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',   opts = {} },
@@ -178,16 +213,16 @@ require('lazy').setup({
     end
   },
 
-  -- Autocompletion
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies =
-    {
-      'hrsh7th/cmp-nvim-lsp',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip'
-    }
-  },
+  -- -- Autocompletion
+  -- {
+  --   'hrsh7th/nvim-cmp',
+  --   dependencies =
+  --   {
+  --     'hrsh7th/cmp-nvim-lsp',
+  --     'L3MON4D3/LuaSnip',
+  --     'saadparwaiz1/cmp_luasnip'
+  --   }
+  -- },
 
   -- Change symbols wrapping a text
   "tpope/vim-surround",
@@ -210,4 +245,5 @@ require('lazy').setup({
       -- show_current_context_start = true,
     },
   },
+
 }, {})

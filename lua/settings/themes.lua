@@ -17,6 +17,9 @@ M.dark_theme = {
         -- name = 'rose-pine-moon', source = 'rose-pine/neovim', bg = '#1E1823'
         -- name = 'quantum' source = 'tyrannicaltoucan/vim-quantum', bg = '#1e1e1e'
         -- name = 'catppuccin-mocha', lualine = 'catppuccin', source = 'catppuccin/nvim', bg = '#212332'
+        -- name = 'github-theme', source = 'projekt0n/github-nvim-theme', bg = '#1e1e1e'
+        -- name = 'material', source = 'marko-cerovac/material.nvim', bg = '#1e1e1e'
+        -- name = 'falcon', source = 'fenetikm/falcon', bg = '#1e1e1e'
     },
     colors = {
         -- General
@@ -87,7 +90,7 @@ end
 
 -- Default settings
 M.use_dark_theme = true
-M.current_bg = "NONE"
--- M.current_bg = M.dark_theme.plugin.bg
+-- M.current_bg = "NONE"
+M.current_bg = M.dark_theme.plugin.bg
 
 return M

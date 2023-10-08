@@ -76,6 +76,8 @@ local keymaps = {
         ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
         -- Nvim-tree
         ['˛'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- opt + h
+        -- UndoTree
+        ['<leader>ut'] = { ':UndotreeToggle<CR>', 'Toggle UndoTree view' },
         -- Debugger
         ['<F5>'] = { dap.continue, "Debugger - Continue" },
         ['<F1>'] = { dap.step_over, "Debugger - Step over" },

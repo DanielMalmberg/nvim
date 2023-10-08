@@ -27,3 +27,5 @@ vim.cmd [[let &fcs='eob: ']]
 
 -- Disable diagnostics
 require 'toggle_lsp_diagnostics'.init({ start_on = false })
+-- require 'lspconfig'.omnisharp.setup{}
+-- require'omnisharp-vim'.setup{}

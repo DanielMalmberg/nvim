@@ -18,7 +18,7 @@ require('nvim-treesitter.configs').setup {
     'vim'
   },
 
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+  -- Autoinstall languages that are not installed 
   auto_install = false,
 
   highlight = { enable = true },
@@ -48,7 +48,7 @@ require('nvim-treesitter.configs').setup {
     },
     move = {
       enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
+      set_jumps = true,
       goto_next_start = {
         [']m'] = '@function.outer',
         [']]'] = '@class.outer',
