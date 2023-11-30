@@ -80,6 +80,8 @@ require('lazy').setup({
   --     'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   --   },
   -- },
+  
+  "github/copilot.vim",
 
   {
     'VonHeikemen/lsp-zero.nvim',
