@@ -44,6 +44,8 @@ local keymaps = {
         ['<leader>p'] = { '\"_dP', "Paste and keep text in the yank register" },
         -- FUNCTIONS
         ---------------------------------------
+        ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
+        ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)"},
         ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
         ['<S-u>'] = { "<cmd>lua require('utils.gui').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
