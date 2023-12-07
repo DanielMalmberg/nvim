@@ -58,6 +58,9 @@ require('lazy').setup({
     },
   },
 
+
+  "folke/todo-comments.nvim",
+
   -- FEATURES
   -----------------------------------------------------------
   -- LSP Configuration & Plugins
