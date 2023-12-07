@@ -2,6 +2,7 @@
 
 require("bufferline").setup {
   options = {
+    version="*",
     color_icons = true,
     diagnostics = "nvim_lsp",
     diagnostics_indicator = function(count, level)
