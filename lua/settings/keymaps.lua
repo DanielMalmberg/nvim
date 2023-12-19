@@ -125,8 +125,3 @@ handler.set_wordwrap_keymaps()
 -- Hop
 -- ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
 -- ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
-
--- Bufferline
--- ['<Tab>'] = { ':BufferLineCycleNext<CR>', "" },
--- ['<S-Tab>'] = { ':BufferLineCyclePrev<CR>', "" },
--- ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "" },
