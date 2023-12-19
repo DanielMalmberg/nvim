@@ -11,7 +11,7 @@ M.backgrounds = {
     'NvimTreeNormalNC',
     'NvimTreeEndOfBuffer',
     'NvimTreeWinSeparator',
-    'BufferLineFill',
+    -- 'BufferLineFill',
     'diffAdded',
     'diffChanged',
     'diffRemoved',
@@ -21,12 +21,12 @@ M.backgrounds = {
 
 M.dark_colors = {
     -- General
-    ['BufferLineInfo'] = "guifg=#5a5a5a",
-    ['BufferLineHint'] = "guifg=#5a5a5a",
-    ['BufferLineWarning'] = "guifg=#5a5a5a",
-    ['BufferLineDuplicate'] = "guifg=#5a5a5a gui=none",
-    ['BufferLineCloseButton'] = "guifg=#5a5a5a",
-    ['BufferLineBackground'] = "guifg=#5a5a5a",
+    -- ['BufferLineInfo'] = "guifg=#5a5a5a",
+    -- ['BufferLineHint'] = "guifg=#5a5a5a",
+    -- ['BufferLineWarning'] = "guifg=#5a5a5a",
+    -- ['BufferLineDuplicate'] = "guifg=#5a5a5a gui=none",
+    -- ['BufferLineCloseButton'] = "guifg=#5a5a5a",
+    -- ['BufferLineBackground'] = "guifg=#5a5a5a",
     ['NvimTreeWinSeparator'] = "guifg=#505050",
     ['IndentBlanklineContextChar'] = "guifg=#949494",
     -- ['IlluminatedWordRead'] = "gui=none guibg=#505050",
@@ -34,18 +34,18 @@ M.dark_colors = {
     -- ['IlluminatedWordWrite'] = "gui=none guibg=#505050",
 
     -- Visible
-    ['BufferLineBufferVisible'] = "guifg=#5a5a5a",
-    ["BufferLineHintVisible"] = "guifg=#5a5a5a",
-    ["BufferLineInfoVisible"] = "guifg=#5a5a5a",
-    ["BufferLineWarningVisible"] = "guifg=#5a5a5a",
-    ['BufferLineCloseButtonVisible'] = "guifg=#5a5a5a",
-    ['BufferLineDuplicateSelected'] = "guifg=grey gui=none",
+    -- ['BufferLineBufferVisible'] = "guifg=#5a5a5a",
+    -- ["BufferLineHintVisible"] = "guifg=#5a5a5a",
+    -- ["BufferLineInfoVisible"] = "guifg=#5a5a5a",
+    -- ["BufferLineWarningVisible"] = "guifg=#5a5a5a",
+    -- ['BufferLineCloseButtonVisible'] = "guifg=#5a5a5a",
+    -- ['BufferLineDuplicateSelected'] = "guifg=grey gui=none",
     -- Selected
-    ['BufferLineBufferSelected'] = "gui=none",
-    ['BufferLineInfoSelected'] = "guifg=#FFFFF gui=none",
-    ['BufferLineHintSelected'] = "guifg=#FFFFF gui=none",
-    ['BufferLineWarningSelected'] = "guifg=#FFFFF gui=none",
-    ['BufferLineIndicatorSelected'] = "guifg=#1B1B1B guibg=#1B1B1B",
+    -- ['BufferLineBufferSelected'] = "gui=none",
+    -- ['BufferLineInfoSelected'] = "guifg=#FFFFF gui=none",
+    -- ['BufferLineHintSelected'] = "guifg=#FFFFF gui=none",
+    -- ['BufferLineWarningSelected'] = "guifg=#FFFFF gui=none",
+    -- ['BufferLineIndicatorSelected'] = "guifg=#1B1B1B guibg=#1B1B1B",
 }
 
 return M

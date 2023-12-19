@@ -38,7 +38,7 @@ require('lazy').setup({
   "folke/todo-comments.nvim",
   "lewis6991/gitsigns.nvim", -- Adds git releated signs to the gutter, as well as utilities for managing changes
   "akinsho/toggleterm.nvim", -- Toggleable terminal window
-  "akinsho/bufferline.nvim", -- Tabs
+  -- "akinsho/bufferline.nvim", -- Tabs
   "nvim-tree/nvim-tree.lua", -- File explorer
   "sindrets/diffview.nvim",
   "RRethy/vim-illuminate", -- Highlight current word occurrences

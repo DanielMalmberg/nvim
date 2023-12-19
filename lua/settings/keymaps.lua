@@ -43,6 +43,10 @@ local keymaps = {
 
         -- FUNCTIONS
         ---------------------------------------
+        ['<Tab>'] = { ':bp<CR>', "Go to next buffer" },
+        ['<S-Tab>'] = { ':bn<CR>', "Go to previous buffer" },
+        ['<leader>ls'] = { ':ls<CR>', "List all open buffers" },
+        ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "" },
         ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
         ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)"},
         ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
@@ -59,10 +63,6 @@ local keymaps = {
         [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
         ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
         ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
-        -- Bufferline
-        ['<Tab>'] = { ':BufferLineCycleNext<CR>', "" },
-        ['<S-Tab>'] = { ':BufferLineCyclePrev<CR>', "" },
-        ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "" },
         -- Toggle LSP warnings and errors
         ['<leader>tt'] = { ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
         ['<leader>lt'] = { ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
@@ -125,3 +125,8 @@ handler.set_wordwrap_keymaps()
 -- Hop
 -- ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
 -- ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
+
+-- Bufferline
+-- ['<Tab>'] = { ':BufferLineCycleNext<CR>', "" },
+-- ['<S-Tab>'] = { ':BufferLineCyclePrev<CR>', "" },
+-- ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "" },
