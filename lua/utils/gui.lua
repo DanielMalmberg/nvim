@@ -1,80 +1,41 @@
--- [[ Configure GUI utilities ]]
+-- [[ Configure theme ]]
 
-local M = {}
+local theme = require('settings.themes')
+local colors = require('settings.colors')
 
-local themes = require('settings.themes')
-
-local function get_theme(current)
-  local theme = {}
-  if current then
-    theme = themes.use_dark_theme and themes.dark_theme or themes.light_theme
-  else
-    theme = themes.use_dark_theme and themes.light_theme or themes.dark_theme
-  end
-  if rawget(theme.plugin, 'lualine') == nil then
-    theme.plugin['lualine'] = theme.plugin.name
-  end
-  return theme
-end
-
-M.get_current_theme = function()
-  return get_theme(true)
-end
-
-M.get_optional_theme = function()
-  return get_theme(false)
-end
-
-
-M.change_backgroundcolor = function(color)
-  local backgrounds = {
-    'Normal',
-    'NormalNC',
-    'LineNr',
-    'SignColumn',
-    'FoldColumn',
-    'NvimTreeNormal',
-    'NvimTreeNormalNC',
-    'NvimTreeEndOfBuffer',
-    'NvimTreeWinSeparator',
-    'BufferLineFill',
-    'diffAdded',
-    'diffChanged',
-    'diffRemoved',
-    'EndOfBuffer',
-    'TelescopeNormal'
-  }
-
-  for _, property in pairs(backgrounds) do
+local function change_backgroundcolor(color)
+  for _, property in pairs(colors.backgrounds) do
     vim.cmd(string.format('highlight %s guibg=%s', property, color))
   end
 end
 
-M.set_custom_colors = function()
-  vim.o.background = themes.use_dark_theme and 'dark' or 'light'
-  M.change_backgroundcolor(themes.current_bg)
-  for key, color in pairs(M.get_current_theme().colors) do
-    vim.cmd(string.format('hi %s %s', key, color))
+local function set_custom_colors()
+  if theme.selected_theme.transparency then
+    change_backgroundcolor(theme.current_bg)
+  end
+  if theme.selected_theme.custom_colors ~= nil then
+    for key, color in pairs(theme.selected_theme.custom_colors) do
+      vim.cmd(string.format('hi %s %s', key, color))
+    end
   end
 end
 
-M.toggle_theme = function()
-  themes.use_dark_theme = not themes.use_dark_theme
-  current_theme = M.get_current_theme()
-  vim.cmd(string.format('colorscheme %s', current_theme.plugin.name))
-  themes.current_bg = current_theme.plugin.bg
-  -- gui_settings.current_bg = gui_settings.use_dark_theme and "NONE" or current_theme.plugin.bg
-  M.set_custom_colors()
-end
-
+local M = {}
 M.toggle_transparency = function()
-  local default_bg = M.get_current_theme().plugin.bg
-  if themes.current_bg == "NONE" then
-    themes.current_bg = default_bg
-  else
-    themes.current_bg = "NONE"
+  if theme.selected_theme.transparency then
+    local default_bg = theme.selected_theme.bg
+    if theme.current_bg == "NONE" then
+      theme.current_bg = default_bg
+    else
+      theme.current_bg = "NONE"
+    end
+    change_backgroundcolor(theme.current_bg)
   end
-  M.change_backgroundcolor(themes.current_bg)
 end
+
+
+-- INITIALIZE
+----------------------------------
+set_custom_colors()
 
 return M

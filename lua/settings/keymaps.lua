@@ -54,6 +54,11 @@ local keymaps = {
 
         -- PLUGINS
         ---------------------------------------
+        -- Diagnostic keymaps
+        ['[d'] = { vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
+        [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
+        ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
+        ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
         -- Bufferline
         ['<Tab>'] = { ':BufferLineCycleNext<CR>', "" },
         ['<S-Tab>'] = { ':BufferLineCyclePrev<CR>', "" },
@@ -97,7 +102,7 @@ local keymaps = {
         ['<S-h>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
     },
     normal_and_visual = {
-        ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
+        -- ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
         ['<C-k>'] = { '4k', "Faster scrolling (up)" },
         ['<C-j>'] = { '4j', "Faster scrolling (down)" },
         ['<C-h>'] = { '4h', "Faster scrolling (left)" },

@@ -1,8 +1,4 @@
--- [[ Configure Plugin manager ]]
-
-local gui_utils = require('utils.gui')
-local current_theme = gui_utils.get_current_theme()
-local optional_theme = gui_utils.get_optional_theme()
+-- [[ Configure Plugin handler ]]
 
 -- Lazy.nvim boostrap
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -21,13 +17,21 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   {
-    current_theme.plugin.source,
+    require('settings.themes').selected_theme.source,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme(current_theme.plugin.name)
+      vim.cmd.colorscheme(require('settings.themes').selected_theme.name)
     end,
+    opts = {
+      no_italic = true,
+      no_bold = true,
+      integrations = {
+          cmp = true,
+          nvimtree = true,
+          telescope = true
+      }
+    }
   },
-  optional_theme.plugin.source,
 
   "nvim-telescope/telescope.nvim",
   "nvim-lualine/lualine.nvim",
@@ -42,7 +46,6 @@ require('lazy').setup({
   "folke/which-key.nvim", -- Useful plugin to show you pending keybinds.
   "tpope/vim-fugitive",
   "tpope/vim-surround", -- Change symbols wrapping a text
-  "tope/vim-rhubarb",
   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   "preservim/tagbar", -- Tagbar
   "phaazon/hop.nvim",
@@ -72,24 +75,14 @@ require('lazy').setup({
     },
   },
 
-
-  {
-    "nvim-telescope/telescope.nvim",
-    version = '*',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-
-
-
-
 -- PLUGINS WITH DEPENDENCIES 
 
   -- Fuzzy Finder (files, lsp, etc)
-  -- {
-  --   'nvim-telescope/telescope.nvim',
-  --   version = '*',
-  --   dependencies = { 'nvim-lua/plenary.nvim' }
-  -- },
+  {
+    'nvim-telescope/telescope.nvim',
+    version = '*',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
 
   -- Debugger
   {
