@@ -29,26 +29,24 @@ require('lazy').setup({
   },
   optional_theme.plugin.source,
 
-  "nvim-tree/nvim-tree.lua", -- File explorer
-  "akinsho/bufferline.nvim", -- Tabs
-  "preservim/tagbar", -- Tagbar
-  "github/copilot.vim", -- AI copilot
-  "RRethy/vim-illuminate", -- Highlight current word occurrences
-  "tpope/vim-surround", -- Change symbols wrapping a text
-  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-  "akinsho/toggleterm.nvim", -- Toggleable terminal window
-  "folke/which-key.nvim", -- Useful plugin to show you pending keybinds.
-  "lewis6991/gitsigns.nvim", -- Adds git releated signs to the gutter, as well as utilities for managing changes
+  "nvim-telescope/telescope.nvim",
   "nvim-lualine/lualine.nvim",
   "folke/todo-comments.nvim",
+  "lewis6991/gitsigns.nvim", -- Adds git releated signs to the gutter, as well as utilities for managing changes
+  "akinsho/toggleterm.nvim", -- Toggleable terminal window
+  "akinsho/bufferline.nvim", -- Tabs
+  "nvim-tree/nvim-tree.lua", -- File explorer
   "sindrets/diffview.nvim",
+  "RRethy/vim-illuminate", -- Highlight current word occurrences
+  "numToStr/Comment.nvim", -- Toggle comment on current visual selection (default vkeymap = "gc")
+  "folke/which-key.nvim", -- Useful plugin to show you pending keybinds.
   "tpope/vim-fugitive",
-  "tpope/vim-rhubarb",
+  "tpope/vim-surround", -- Change symbols wrapping a text
+  "tope/vim-rhubarb",
+  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  "preservim/tagbar", -- Tagbar
+  "phaazon/hop.nvim",
   "mbbill/undotree",
-
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',   opts = {} },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
@@ -59,13 +57,6 @@ require('lazy').setup({
     cond = function()
       return vim.fn.executable 'make' == 1
     end,
-  },
-
-  {
-    'phaazon/hop.nvim',
-    config = function()
-      require('hop').setup{}
-    end
   },
 
   -- Add indentation guides even on blank lines
@@ -82,17 +73,23 @@ require('lazy').setup({
   },
 
 
+  {
+    "nvim-telescope/telescope.nvim",
+    version = '*',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+
 
 
 
 -- PLUGINS WITH DEPENDENCIES 
 
   -- Fuzzy Finder (files, lsp, etc)
-  {
-    'nvim-telescope/telescope.nvim',
-    version = '*',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
+  -- {
+  --   'nvim-telescope/telescope.nvim',
+  --   version = '*',
+  --   dependencies = { 'nvim-lua/plenary.nvim' }
+  -- },
 
   -- Debugger
   {
