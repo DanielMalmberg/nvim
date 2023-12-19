@@ -55,6 +55,8 @@ local keymaps = {
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Replace all occurrences of current word in current file" },
         ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
+        ['<leader>q'] = { '@q', "Trigger quick macro"},
+
 
         -- PLUGINS
         ---------------------------------------
@@ -62,7 +64,7 @@ local keymaps = {
         ['[d'] = { vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
         [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
         ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
-        ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
+        -- ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
         -- Toggle LSP warnings and errors
         ['<leader>tt'] = { ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
         ['<leader>lt'] = { ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
