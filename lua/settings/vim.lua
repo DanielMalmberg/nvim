@@ -18,6 +18,10 @@ vim.o.mouse = 'a'
 -- Scroll steps when using <C-u>, <C-d>, <C-y> and <C-e>
 vim.o.scroll = 20
 
+--- Set tabs to given number of spaces
+vim.cmd("set tabstop=4")
+vim.cmd("set shiftwidth=4")
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -52,3 +56,4 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Required for Bufferline plugin to work
 vim.opt.termguicolors = true
+
