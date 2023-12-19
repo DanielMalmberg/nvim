@@ -57,7 +57,7 @@ local keymaps = {
         -- Bufferline
         ['<Tab>'] = { ':BufferLineCycleNext<CR>', "" },
         ['<S-Tab>'] = { ':BufferLineCyclePrev<CR>', "" },
-        ["<leader>x"] = { ":lua require('utils.navigation').close_current_buffer()<CR>", "" },
+        ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "" },
         -- Toggle LSP warnings and errors
         ['<leader>tt'] = { ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
         ['<leader>lt'] = { ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
