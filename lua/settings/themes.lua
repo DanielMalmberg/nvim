@@ -5,17 +5,17 @@ local colors = require('settings.colors')
 local M = {}
 
 M.selected_theme = {
+    -- name = '', source = '', transparency = false
     name = 'vscode', source = 'mofiqul/vscode.nvim', transparency = true, bg = '#1e1e1e', custom_colors = colors.dark_colors
-    -- name = 'onedark', source = 'navarasu/onedark.nvim', transparency = false
-    -- name = 'tokyonight', source = 'folke/tokyonight.nvim', bg = '#242635'
-    -- name = 'everforest', source = 'sainnhe/everforest', bg = '#282F34'
-    -- name = 'nightfly', source = 'bluz71/vim-nightfly-colors', bg = '#0A1522'
-    -- name = 'rose-pine-moon', source = 'rose-pine/neovim', bg = '#1E1823'
-    -- name = 'quantum' source = 'tyrannicaltoucan/vim-quantum', bg = '#1e1e1e'
-    -- name = 'catppuccin-mocha', lualine = 'catppuccin', source = 'catppuccin/nvim', bg = '#212332'
-    -- name = 'github-theme', source = 'projekt0n/github-nvim-theme', bg = '#1e1e1e'
-    -- name = 'material', source = 'marko-cerovac/material.nvim', bg = '#1e1e1e'
-    -- name = 'falcon', source = 'fenetikm/falcon', bg = '#1e1e1e'
+    -- name = 'onedark', source = 'navarasu/onedark.nvim', transparency = false, --bg = '#1e1e1e'
+    -- name = 'tokyonight', source = 'folke/tokyonight.nvim', transparency = false, --bg = '#242635'
+    -- name = 'everforest', source = 'sainnhe/everforest', transparency = false, --bg = '#282F34'
+    -- name = 'nightfly', source = 'bluz71/vim-nightfly-colors', transparency = false, --bg = '#0A1522'
+    -- name = 'rose-pine-moon', source = 'rose-pine/neovim', transparency = false, --bg = '#1E1823'
+    -- name = 'quantum' source = 'tyrannicaltoucan/vim-quantum', transparency = false, --bg = '#1e1e1e'
+    -- name = 'catppuccin-mocha', source = 'catppuccin/nvim', transparency = false, -- bg = '#212332'
+    -- name = 'falcon', source = 'fenetikm/falcon', transparency = false, -- bg = '#1e1e1e'
+    -- name = 'tundra', source = 'sam4llis/nvim-tundra', transparency = false
 }
 
 -- Startup background
