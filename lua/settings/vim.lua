@@ -6,11 +6,22 @@
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
--- Set highlight on search
-vim.o.hlsearch = false
+-- Don't show current mode as text
+vim.cmd('set noshowmode')
 
 -- Make line numbers default
 vim.wo.number = true
+vim.cmd('set number')
+
+-- Disable Neovim intro text
+vim.opt.shortmess:append("sI")
+
+-- Disable tilde on end of buffer
+vim.cmd [[let &fcs='eob: ']]
+
+-- Set highlight on search
+vim.o.hlsearch = false
+
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
