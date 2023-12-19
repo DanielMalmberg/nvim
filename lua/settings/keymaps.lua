@@ -1,5 +1,4 @@
--- [[ Basic Keymaps ]]
--- `:Telescope keymaps`
+-- [[ Set keymaps ]]
 
 -- UNBIND UNNECESSARY KEYMAPS
 ----------------------------------
@@ -9,10 +8,9 @@ vim.api.nvim_set_keymap('x', '<C-l>', '<Nop>', { noremap = true, silent = true }
 
 -- CUSTOM KEYMAPS
 ----------------------------------
-local nav_utils = require('utils.navigation')
 local dap = require('dap')
 
--- ['input'] = { 'output', "description" }
+-- ['key'] = { 'action', "description" }
 local keymaps = {
     insert = {
         ['('] = { '()<Left>', "" },
@@ -42,6 +40,7 @@ local keymaps = {
         ['<Space>'] = { '<Nop>', "Disable Space-key in normal" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in visual" },
         ['<leader>p'] = { '\"_dP', "Paste and keep text in the yank register" },
+
         -- FUNCTIONS
         ---------------------------------------
         ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
@@ -52,6 +51,7 @@ local keymaps = {
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Replace all occurrences of current word in current file" },
         ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
+
         -- PLUGINS
         ---------------------------------------
         -- Bufferline
@@ -71,11 +71,6 @@ local keymaps = {
         ['<leader>sw'] = { require('telescope.builtin').grep_string, "[S]earch current [W]ord" },
         ['<leader>wd'] = { require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics" },
         ['<leader>ds'] = { require('telescope.builtin').lsp_document_symbols, "LSP [D]ocument [S]ymbols" },
-        -- Diagnostic keymaps
-        ['[d'] = { vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
-        [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
-        ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
-        ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
         -- Nvim-tree
         ['˛'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- opt + h
         -- UndoTree
@@ -100,8 +95,6 @@ local keymaps = {
         -- Hop
         ['<S-h>'] = {'<Nop>', "Disable regular shift+h" },
         ['<S-h>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
-        -- ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
-        -- ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
     },
     normal_and_visual = {
         ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
@@ -111,21 +104,19 @@ local keymaps = {
         ['<C-l>'] = { '4l', "Faster scrolling (right)" },
     },
 }
-nav_utils.apply_keymaps(keymaps)
 
+local handler = require('utils.keymap_handler')
+handler.apply_keymaps(keymaps)
+handler.set_wordwrap_keymaps()
 
--- SPECIAL KEYMAPS
+-- UNUSED KEYMAPS
 ------------------------------------
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- Diagnostic keymaps
+-- ['[d'] = { vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
+-- [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
+-- ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
+-- ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
 
-wrap_text_symbols = {
-    { "\'", "\'" },
-    { '\"', '\"' },
-    { '*',  '*' },
-    { '(',  ')' },
-    { '[',  ']' },
-    { '{',  '}' },
-}
-nav_utils.apply_text_wrapping_keymaps(wrap_text_symbols)
+-- Hop
+-- ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
+-- ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
