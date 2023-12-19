@@ -10,6 +10,7 @@ local function change_backgroundcolor(color)
 end
 
 local function set_custom_colors()
+  vim.opt.background = 'dark'
   if theme.selected_theme.transparency then
     change_backgroundcolor(theme.current_bg)
   end
