@@ -18,8 +18,8 @@ M.selected_theme = {
     name = 'tundra', source = 'sam4llis/nvim-tundra', transparency = false
 }
 
--- Startup background
--- M.current_bg = "NONE"
+-- Startup background (when toggle transparency is active)
 M.current_bg = M.selected_theme.bg
+-- M.current_bg = "NONE"
 
 return M

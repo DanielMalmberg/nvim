@@ -1,17 +1,8 @@
--- [[ Set keymaps ]]
-
--- UNBIND UNNECESSARY KEYMAPS
-----------------------------------
-vim.api.nvim_set_keymap('n', '<C-l>', '<Nop>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', '<C-l>', '<Nop>', { noremap = true, silent = true })
-
 
 -- CUSTOM KEYMAPS
 ----------------------------------
-local dap = require('dap')
-
 -- ['key'] = { 'action', "description" }
-local keymaps = {
+return {
     insert = {
         ['('] = { '()<Left>', "" },
         ['['] = { '[]<Left>', "" },
@@ -50,7 +41,7 @@ local keymaps = {
         ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
         ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)"},
         ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
-        ['<S-u>'] = { "<cmd>lua require('utils.gui').toggle_transparency()<CR>", "Toggle transparency" },
+        ['<S-u>'] = { "<cmd>lua require('handlers.theme_handler').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Replace all occurrences of current word in current file" },
@@ -83,12 +74,12 @@ local keymaps = {
         -- UndoTree
         ['<leader>ut'] = { ':UndotreeToggle<CR>', 'Toggle UndoTree view' },
         -- Debugger
-        ['<F5>'] = { dap.continue, "Debugger - Continue" },
-        ['<F1>'] = { dap.step_over, "Debugger - Step over" },
-        ['<F2>'] = { dap.step_into, "Debugger - Step into" },
-        ['<F3>'] = { dap.step_out, "Debugger - Step out" },
-        ['<leader>b'] = { dap.toggle_breakpoint, "Debugger - Toggle breakpoint" },
-        ['<leader>B'] = { function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end,
+        ['<F5>'] = { require('dap').continue, "Debugger - Continue" },
+        ['<F1>'] = { require('dap').step_over, "Debugger - Step over" },
+        ['<F2>'] = { require('dap').step_into, "Debugger - Step into" },
+        ['<F3>'] = { require('dap').step_out, "Debugger - Step out" },
+        ['<leader>b'] = { require('dap').toggle_breakpoint, "Debugger - Toggle breakpoint" },
+        ['<leader>B'] = { function() require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ') end,
             "Debugger - Toggle breakpoint (with condition)" },
         -- Diffview (Git)
         ['<leader>git'] = { ":DiffviewOpen<CR>", "View all git changes (open)" },
@@ -104,17 +95,13 @@ local keymaps = {
         ['<S-h>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
     },
     normal_and_visual = {
-        -- ['<C-S-l>'] = { ":lua require('utils.gui').toggle_theme()<CR>" },
+        -- ['<C-S-l>'] = { ":lua require('handlers.theme_handler').toggle_theme()<CR>" },
         ['<C-k>'] = { '4k', "Faster scrolling (up)" },
         ['<C-j>'] = { '4j', "Faster scrolling (down)" },
         ['<C-h>'] = { '4h', "Faster scrolling (left)" },
         ['<C-l>'] = { '4l', "Faster scrolling (right)" },
     },
 }
-
-local handler = require('utils.keymap_handler')
-handler.apply_keymaps(keymaps)
-handler.set_wordwrap_keymaps()
 
 -- UNUSED KEYMAPS
 ------------------------------------

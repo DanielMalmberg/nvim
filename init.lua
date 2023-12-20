@@ -10,6 +10,6 @@
 require('plugins')
 require('settings')
 require('features')
-require('utils')
+require('handlers')
 
 require 'toggle_lsp_diagnostics'.init({ start_on = false })
