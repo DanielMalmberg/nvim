@@ -1,8 +1,17 @@
+-- UNBIND UNNECESSARY KEYMAPS
+----------------------------------
+vim.api.nvim_set_keymap('n', '<C-l>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', '<C-l>', '<Nop>', { noremap = true, silent = true })
+
+-- EXPRESSIONS
+----------------------------------
+-- Automatically insert an empty line between curly braces in a function
+vim.api.nvim_set_keymap('i', '<CR>', 'getline(".")[col(".") - 2] == "{" ? "\\n\\<Esc>O" : "\\n"', { expr = true })
 
 -- CUSTOM KEYMAPS
 ----------------------------------
 -- ['key'] = { 'action', "description" }
-return {
+local keymaps =  {
     insert = {
         ['('] = { '()<Left>', "" },
         ['['] = { '[]<Left>', "" },
@@ -18,12 +27,16 @@ return {
         ['K'] = { ":m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
     },
     normal = {
+        -- GUI
+        ---------------------------------------
+        ['<S-u>'] = { "<cmd>lua require('handlers.theme_handler').toggle_transparency()<CR>", "Toggle transparency" },
+
         -- NAVIGATING
         ---------------------------------------
         ['n'] = { 'nzzzv', "Keeps the cursos in the middle when stepping through searches" },
         ['N'] = { 'Nzzzv', "Keeps the cursos in the middle when stepping through searches" },
-        ['<C-d>'] = { '<C-d>zz', "Keeps the cursor in the middle when jumping down the page" },
-        ['<C-u>'] = { '<C-u>zz', "Keeps the cursor in the middle when jumping up the page" },
+        ['<C-d>'] = { '0<C-d>zz', "Keeps the cursor in the middle when jumping down the page" },
+        ['<C-u>'] = { '0<C-u>zz', "Keeps the cursor in the middle when jumping up the page" },
         ['<CR>'] = { 'o<ESC>', "Create new row in normal mode" },
         ['<S-CR>'] = { '<S-o><ESC>', "Create new row in normal mode (above)" },
         ['<BS>'] = { 'ddk', "Delete row in normal mode" },
@@ -32,34 +45,34 @@ return {
         ['<Space>'] = { '<Nop>', "Disable Space-key in visual" },
         ['<leader>p'] = { '\"_dP', "Paste and keep text in the yank register" },
 
-        -- FUNCTIONS
+        -- BUFFERS
         ---------------------------------------
         ['<Tab>'] = { ':bp<CR>', "Go to next buffer" },
         ['<S-Tab>'] = { ':bn<CR>', "Go to previous buffer" },
         ['<leader>ls'] = { ':ls<CR>', "List all open buffers" },
-        ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "" },
-        ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
-        ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)"},
-        ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
-        ['<S-u>'] = { "<cmd>lua require('handlers.theme_handler').toggle_transparency()<CR>", "Toggle transparency" },
-        ['<leader>cw'] = { ':bufdo bd<CR>', "Close all windows (buffers)" },
-        ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
-            "Replace all occurrences of current word in current file" },
-        ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
-        ['<leader>q'] = { '@q', "Trigger quick macro"},
+        ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "Close current buffer" },
+        ['<leader>cw'] = { ':bufdo bd<CR>', "Close all open buffers" },
 
-
-        -- PLUGINS
+        -- FILES
         ---------------------------------------
-        -- Diagnostic keymaps
-        ['[d'] = { vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
-        [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
-        ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
-        -- ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
-        -- Toggle LSP warnings and errors
+        ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)"},
+        ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
+        ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
+
+        -- LSP
+        ---------------------------------------
+        ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
+        ['<leader>te'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
         ['<leader>tt'] = { ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
         ['<leader>lt'] = { ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
-        -- Telecope (`h telescope.builtin`)
+
+        -- EDITING
+        ---------------------------------------
+        ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
+            "Replace all occurrences of current word in current file (not bound to LSP)" },
+
+        -- TELESCOPE
+        ---------------------------------------
         ['<leader>?'] = { require('telescope.builtin').oldfiles, "[?] Find recently opened files" },
         ['<C-b>'] = { require('telescope.builtin').buffers, "Find existing [b]uffers" },
         ['<leader><C-f>'] = { ':Telescope current_buffer_fuzzy_find<CR>', "[/] Fuzzily search in current buffer" },
@@ -69,11 +82,28 @@ return {
         ['<leader>sw'] = { require('telescope.builtin').grep_string, "[S]earch current [W]ord" },
         ['<leader>wd'] = { require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics" },
         ['<leader>ds'] = { require('telescope.builtin').lsp_document_symbols, "LSP [D]ocument [S]ymbols" },
-        -- Nvim-tree
-        ['˛'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- opt + h
-        -- UndoTree
+
+        -- NVIM-TREE
+        ---------------------------------------
+        ['˛'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- (symbol for opt + h)
+
+        -- UNDOTREE
+        ---------------------------------------
         ['<leader>ut'] = { ':UndotreeToggle<CR>', 'Toggle UndoTree view' },
-        -- Debugger
+
+        --TAGBAR
+        ---------------------------------------
+        ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- (symbol for opt + l)
+        ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
+        
+        -- DIFFVIEW (GIT)
+        ---------------------------------------
+        ['<leader>git'] = { ":DiffviewOpen<CR>", "Open git diffview" },
+        ['<leader>gc'] = { ":DiffviewClose<CR>", "Close git diffview" },
+        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
+        
+        -- DEBUGGER
+        ---------------------------------------
         ['<F5>'] = { require('dap').continue, "Debugger - Continue" },
         ['<F1>'] = { require('dap').step_over, "Debugger - Step over" },
         ['<F2>'] = { require('dap').step_into, "Debugger - Step into" },
@@ -81,21 +111,16 @@ return {
         ['<leader>b'] = { require('dap').toggle_breakpoint, "Debugger - Toggle breakpoint" },
         ['<leader>B'] = { function() require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ') end,
             "Debugger - Toggle breakpoint (with condition)" },
-        -- Diffview (Git)
-        ['<leader>git'] = { ":DiffviewOpen<CR>", "View all git changes (open)" },
-        ['<leader>gc'] = { ":DiffviewClose<CR>", "View all git changes (close)" },
-        --Tagbar
-        ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- opt + l
-        ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
-        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
-        -- illuminate
+
+        -- ILLUMINATE
+        ---------------------------------------
         ['<leader>i'] = { ':IlluminateToggle<CR>', "Toggle illuminate (highlight) plugin" },
-        -- Hop
-        ['<S-h>'] = {'<Nop>', "Disable regular shift+h" },
+
+        -- HOP
+        ---------------------------------------
         ['<S-h>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
     },
     normal_and_visual = {
-        -- ['<C-S-l>'] = { ":lua require('handlers.theme_handler').toggle_theme()<CR>" },
         ['<C-k>'] = { '4k', "Faster scrolling (up)" },
         ['<C-j>'] = { '4j', "Faster scrolling (down)" },
         ['<C-h>'] = { '4h', "Faster scrolling (left)" },
@@ -103,14 +128,32 @@ return {
     },
 }
 
+-- APPLY CUSTOM KEYMAPS
+----------------------------------
+local modes = {
+  ['insert'] = 'i',
+  ['visual'] = 'v',
+  ['normal'] = 'n',
+  ['normal_and_visual'] = { 'n', 'v' }
+}
+
+for mode, bindings in pairs(keymaps) do
+  for key, binding in pairs(bindings) do
+    vim.keymap.set(modes[mode], key, binding[1], { desc = binding[2], silent = true, noremap = true })
+  end
+end
+
 -- UNUSED KEYMAPS
 ------------------------------------
 -- Diagnostic keymaps
 -- ['[d'] = { vim.diagnostic.goto_prev, "Go to previous diagnostic message" },
 -- [']d'] = { vim.diagnostic.goto_next, "Go to next diagnostic message" },
--- ['<leader>e'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
 -- ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
 
 -- Hop
 -- ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
 -- ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
+--
+-- Expressions
+-- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
