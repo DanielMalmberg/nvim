@@ -1,5 +1,14 @@
 -- [[ Treesitter ]]
+-- Highlight, edit, and navigate code
 
+return {
+  'nvim-treesitter/nvim-treesitter',
+  dependencies =
+    {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+  build = ":TSUpdate",
+  config = function()
 -- `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
@@ -8,11 +17,9 @@ require('nvim-treesitter.configs').setup {
     'css',
     'json',
     'markdown',
-    'c_sharp',
     'lua',
     'python',
     'rust',
-    'tsx',
     'typescript',
     'vimdoc',
     'vim'
@@ -77,3 +84,6 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+  end
+}
+

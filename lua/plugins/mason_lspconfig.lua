@@ -1,5 +1,10 @@
 -- [[ Mason LSP config ]]
+--
 
+return {
+
+  "williamboman/mason-lspconfig.nvim",
+  config = function()
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
   local lsp_map = function(keys, func, desc)
@@ -76,4 +81,6 @@ mason_lspconfig.setup_handlers {
       settings = servers[server_name],
     }
   end,
+}
+  end
 }

@@ -1,18 +1,10 @@
-require('plugins.plugin_manager')
-require('plugins.mason_lspconfig')
-require('plugins.neodev')
-require('plugins.nvim-cmp')
-require('plugins.nvim-tree')
-require('plugins.telescope')
-require('plugins.treesitter')
-require('plugins.toggleterm')
-require('plugins.tagbar')
-require('plugins.illuminate')
-require('plugins.omnisharp')
-require('plugins.todo-comments')
-require('plugins.which-key')
-require('plugins.lualine')
-require('plugins.gitsigns')
-require('plugins.hop')
-require('plugins.toggle-comment')
-require('plugins.inc_rename')
+-- [[ Plugins without configuration or setup function ]]
+
+return {
+   "lewis6991/gitsigns.nvim", -- Adds git releated signs to the gutter, as well as utilities for managing changes
+   "sindrets/diffview.nvim", -- Toggle view of current git changes
+   "tpope/vim-fugitive", -- Makes it possible to do git commands direclty in Neovim 
+   "tpope/vim-surround", -- Change symbols wrapping a text
+   "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+   "mbbill/undotree", -- A version history tree of text changes made in this repository
+}

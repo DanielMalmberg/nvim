@@ -1,6 +1,9 @@
 -- [[ Illuminate ]]
+-- Highlight current word occurrences
 
--- default configuration
+return {
+    "RRethy/vim-illuminate",
+    config = function()
 require('illuminate').configure({
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
@@ -9,3 +12,5 @@ require('illuminate').configure({
         'regex',
     },
 })
+    end,
+}

@@ -1,11 +1,6 @@
 -- [[ Vim Settings ]]
 -- `:help vim.o`
 
--- `:help mapleader`
---  Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
-
 -- Don't show current mode as text
 vim.cmd('set noshowmode')
 

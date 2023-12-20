@@ -1,5 +1,9 @@
 -- [[ Toggleterm ]]
+-- Toggleable terminal window
 
+return {
+  "akinsho/toggleterm.nvim", 
+  config = function()
 require('toggleterm').setup({
   size = 20,
   open_mapping = [[√]], -- opt + j
@@ -8,3 +12,5 @@ require('toggleterm').setup({
   shading_factor = 0.5,
   direction = "horizontal"
 })
+  end,
+}

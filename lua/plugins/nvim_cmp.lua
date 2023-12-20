@@ -1,5 +1,8 @@
 -- [[ Nvim-cmp ]]
 
+return {
+  "hrsh7th/cmp-nvim-lsp",
+  config = function()
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
@@ -42,4 +45,6 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
+}
+  end,
 }
