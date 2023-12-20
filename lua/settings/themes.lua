@@ -6,7 +6,7 @@ local M = {}
 
 M.selected_theme = {
     -- name = '', source = '', transparency = false
-    name = 'vscode', source = 'mofiqul/vscode.nvim', transparency = true, bg = '#1e1e1e', custom_colors = colors.dark_colors
+    -- name = 'vscode', source = 'mofiqul/vscode.nvim', transparency = true, bg = '#1e1e1e', custom_colors = colors.dark_colors
     -- name = 'onedark', source = 'navarasu/onedark.nvim', transparency = false, --bg = '#1e1e1e'
     -- name = 'tokyonight', source = 'folke/tokyonight.nvim', transparency = false, --bg = '#242635'
     -- name = 'everforest', source = 'sainnhe/everforest', transparency = false, --bg = '#282F34'
@@ -15,7 +15,7 @@ M.selected_theme = {
     -- name = 'quantum' source = 'tyrannicaltoucan/vim-quantum', transparency = false, --bg = '#1e1e1e'
     -- name = 'catppuccin-mocha', source = 'catppuccin/nvim', transparency = false, -- bg = '#212332'
     -- name = 'falcon', source = 'fenetikm/falcon', transparency = false, -- bg = '#1e1e1e'
-    -- name = 'tundra', source = 'sam4llis/nvim-tundra', transparency = false
+    name = 'tundra', source = 'sam4llis/nvim-tundra', transparency = false
 }
 
 -- Startup background

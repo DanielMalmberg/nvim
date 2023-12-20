@@ -10,8 +10,13 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  lsp_map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  --lsp_map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  -- vim.keymap.set('n', '<leader>rn', ":IncRename", { noremap = true, silent = true })
   lsp_map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  vim.keymap.set("n", "<leader>rn", function()
+    return ":IncRename " .. vim.fn.expand("<cword>")
+  end, { expr = true })
+  
 
   lsp_map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   lsp_map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')

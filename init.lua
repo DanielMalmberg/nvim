@@ -1,4 +1,4 @@
--- NOTE: Dependencies
+-- INFO: Dependencies
 -- -----------------------------------------------------------
 -- neovim
 -- node.js
