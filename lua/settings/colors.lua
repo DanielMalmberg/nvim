@@ -18,12 +18,9 @@ M.backgrounds = {
     'TelescopeNormal'
 }
 
-M.dark_colors = {
+M.vscode_custom_colors = {
     ['NvimTreeWinSeparator'] = "guifg=#505050",
     ['IndentBlanklineContextChar'] = "guifg=#949494",
-    -- ['IlluminatedWordRead'] = "gui=none guibg=#505050",
-    -- ['IlluminatedWordText'] = "gui=none guibg=#505050",
-    -- ['IlluminatedWordWrite'] = "gui=none guibg=#505050",
 }
 
 return M

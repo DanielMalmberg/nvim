@@ -6,7 +6,7 @@ local M = {}
 
 M.selected_theme = {
     -- name = '', source = '', transparency = false
-    -- name = 'vscode', source = 'mofiqul/vscode.nvim', transparency = true, bg = '#1e1e1e', custom_colors = colors.dark_colors
+    -- name = 'vscode', source = 'mofiqul/vscode.nvim', transparency = true, bg = '#3e1e1e', custom_colors = colors.vscode_custom_colors
     -- name = 'onedark', source = 'navarasu/onedark.nvim', transparency = false, --bg = '#1e1e1e'
     -- name = 'tokyonight', source = 'folke/tokyonight.nvim', transparency = false, --bg = '#242635'
     -- name = 'everforest', source = 'sainnhe/everforest', transparency = false, --bg = '#282F34'
