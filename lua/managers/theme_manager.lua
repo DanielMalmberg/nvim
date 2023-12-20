@@ -1,4 +1,4 @@
--- [[ Theme handler ]]
+-- [[ Theme manager ]]
 
 local theme = require('settings.themes')
 local colors = require('settings.colors')
