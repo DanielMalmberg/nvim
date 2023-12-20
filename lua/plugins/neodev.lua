@@ -1,3 +1,3 @@
--- [[ Configure Neodev ]]
+-- [[ Neodev ]]
 
 require('neodev').setup()

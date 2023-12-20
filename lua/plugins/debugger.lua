@@ -1,4 +1,4 @@
--- [[ Configure Debugger ]]
+-- [[ Debugger ]]
 
 local dap = require 'dap'
 local dapui = require 'dapui'

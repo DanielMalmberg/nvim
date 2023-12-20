@@ -1,4 +1,4 @@
--- [[ Configure TODO Commments ]]
+-- [[ TODO Commments ]]
 
 require("todo-comments").setup {
   -- signs = true, -- show icons in the signs column

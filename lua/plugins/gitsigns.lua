@@ -1,4 +1,4 @@
--- [[ Congigure Gitsigns ]]
+-- [[ Gitsigns ]]
 
 require('gitsigns').setup {
       signs = {

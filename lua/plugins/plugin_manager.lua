@@ -1,4 +1,4 @@
--- [[ Configure Plugin handler ]]
+-- [[ Lazy Plugin Manager ]]
 
 -- Lazy.nvim boostrap
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

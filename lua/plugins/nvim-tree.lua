@@ -1,4 +1,4 @@
--- [[  Configure Nvim-tree ]]
+-- [[ Nvim-tree ]]
 
 require("nvim-tree").setup({
   filters = {

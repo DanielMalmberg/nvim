@@ -1,3 +1,3 @@
--- [[ Configure Hop ]]
+-- [[ Hop ]]
 
 require('hop').setup{}

@@ -1,4 +1,4 @@
--- [[ Configre Toggleterm ]]
+-- [[ Toggleterm ]]
 
 require('toggleterm').setup({
   size = 20,

@@ -1,4 +1,4 @@
--- [[ Configure Lualine ]]
+-- [[ Lualine ]]
 
 require('lualine').setup {
       options = {

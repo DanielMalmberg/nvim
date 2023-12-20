@@ -1,3 +1,5 @@
+-- [[ Omnisharp ]]
+
 local custom_attach = function(client, _)
       if client.name == "omnisharp" then
         vim.lsp.set_log_level("off")

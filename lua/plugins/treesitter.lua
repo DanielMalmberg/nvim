@@ -1,4 +1,4 @@
--- [[ Configure Treesitter ]]
+-- [[ Treesitter ]]
 
 -- `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {

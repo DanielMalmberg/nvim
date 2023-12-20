@@ -1,4 +1,4 @@
--- [[ Configure Telescope ]]
+-- [[ Telescope ]]
 -- `:help telescope` and `:help telescope.setup()`
 
 require('telescope').setup {

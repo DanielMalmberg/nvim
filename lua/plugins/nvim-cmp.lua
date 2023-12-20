@@ -1,4 +1,4 @@
--- [[ Configure Nvim-cmp ]]
+-- [[ Nvim-cmp ]]
 
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'

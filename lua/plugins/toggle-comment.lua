@@ -1,4 +1,4 @@
--- [[ Configre toggle comments ]]
+-- [[ Toggle Comments ]]
 
 require('Comment').setup{
   opts = {}

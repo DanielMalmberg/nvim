@@ -3,8 +3,6 @@
 local theme = require('settings.themes')
 local colors = require('settings.colors')
 
-
--- Functions for toggling transparency
 local function change_backgroundcolor(color)
   for _, property in pairs(colors.backgrounds) do
     vim.cmd(string.format('highlight %s guibg=%s', property, color))
@@ -23,7 +21,6 @@ M.toggle_transparency = function()
     change_backgroundcolor(theme.current_bg)
   end
 end
-
 
 -- INITIALIZE
 ----------------------------------

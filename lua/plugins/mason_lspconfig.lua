@@ -1,4 +1,4 @@
--- [[ Configure Mason LSP config ]]
+-- [[ Mason LSP config ]]
 
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)

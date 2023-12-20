@@ -29,7 +29,7 @@ local keymaps =  {
     normal = {
         -- GUI
         ---------------------------------------
-        ['<S-u>'] = { "<cmd>lua require('handlers.theme_handler').toggle_transparency()<CR>", "Toggle transparency" },
+        ['<S-u>'] = { "<cmd>lua require('managers.theme_manager').toggle_transparency()<CR>", "Toggle transparency" },
 
         -- NAVIGATING
         ---------------------------------------
