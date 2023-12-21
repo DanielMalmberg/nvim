@@ -11,7 +11,7 @@ vim.api.nvim_set_keymap('i', '<CR>', 'getline(".")[col(".") - 2] == "{" ? "\\n\\
 -- CUSTOM KEYMAPS
 ----------------------------------
 -- ['key'] = { 'action', "description" }
-local keymaps =  {
+local keymaps = {
     insert = {
         ['('] = { '()<Left>', "" },
         ['['] = { '[]<Left>', "" },
@@ -55,7 +55,7 @@ local keymaps =  {
 
         -- FILES
         ---------------------------------------
-        ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)"},
+        ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)" },
         ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
         ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
 
@@ -95,13 +95,13 @@ local keymaps =  {
         ---------------------------------------
         ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- (symbol for opt + l)
         ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
-        
+        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
+
         -- DIFFVIEW (GIT)
         ---------------------------------------
         ['<leader>git'] = { ":DiffviewOpen<CR>", "Open git diffview" },
         ['<leader>gc'] = { ":DiffviewClose<CR>", "Close git diffview" },
-        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
-        
+
         -- DEBUGGER
         ---------------------------------------
         ['<F5>'] = { require('dap').continue, "Debugger - Continue" },
@@ -131,16 +131,16 @@ local keymaps =  {
 -- APPLY CUSTOM KEYMAPS
 ----------------------------------
 local modes = {
-  ['insert'] = 'i',
-  ['visual'] = 'v',
-  ['normal'] = 'n',
-  ['normal_and_visual'] = { 'n', 'v' }
+    ['insert'] = 'i',
+    ['visual'] = 'v',
+    ['normal'] = 'n',
+    ['normal_and_visual'] = { 'n', 'v' }
 }
 
 for mode, bindings in pairs(keymaps) do
-  for key, binding in pairs(bindings) do
-    vim.keymap.set(modes[mode], key, binding[1], { desc = binding[2], silent = true, noremap = true })
-  end
+    for key, binding in pairs(bindings) do
+        vim.keymap.set(modes[mode], key, binding[1], { desc = binding[2], silent = true, noremap = true })
+    end
 end
 
 -- UNUSED KEYMAPS
