@@ -73,6 +73,7 @@ local keymaps = {
 
         -- EDITING
         ---------------------------------------
+        ['<leader>uc'] = { ':e!<CR>', "[U]ndo unsaved [c]hanges in current buffer" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Replace all occurrences of current word in current file (not bound to LSP)" },
 
