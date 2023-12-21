@@ -7,22 +7,18 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-require('lualine').setup {
+    require('lualine').setup {
       options = {
         icons_enabled = true,
         theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
-      sections = { 
+      sections = {
         lualine_c = {
-          { 'filename', path = 1 } 
+          { 'filename', path = 1 }
         },
       },
     }
   end,
 }
-
-
-
-

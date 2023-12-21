@@ -2,7 +2,7 @@
 -- Toggleable window that shows the outline (ctags) of the text in the current buffer
 
 return {
-  "preservim/tagbar", 
+  "preservim/tagbar",
   config = function()
     -- Removes the help-text at the top of the window
     vim.api.nvim_exec('let g:tagbar_compact = 2', false)
@@ -12,4 +12,3 @@ return {
     vim.api.nvim_exec('let g:tagbar_autoclose = 1', false)
   end,
 }
-

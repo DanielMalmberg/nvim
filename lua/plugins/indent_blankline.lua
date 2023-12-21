@@ -9,7 +9,7 @@ return {
     space_char_blankline = " ",
     show_current_context = true,
   },
-  dependencies = { 
+  dependencies = {
     "nvim-lua/plenary.nvim",
   }
 }
