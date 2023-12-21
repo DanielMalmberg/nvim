@@ -1,3 +1,3 @@
 require('settings.vim')
-require('settings.themes')
+require('settings.theme')
 require('settings.keymaps')

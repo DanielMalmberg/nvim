@@ -1,9 +1,7 @@
--- [[ GUI Settings ]
+-- [[ Current theme ]]
 
 local colors = require('settings.colors')
-local M = {}
-
-M.selected_theme = {
+return {
     -- name = '', source = '', custom_colors = {} (optional)
     -- name = 'vscode', source = 'mofiqul/vscode.nvim', custom_colors = colors.vscode_custom_colors
     -- name = 'onedark', source = 'navarasu/onedark.nvim'
@@ -16,7 +14,3 @@ M.selected_theme = {
     -- name = 'falcon', source = 'fenetikm/falcon'
     name = 'tundra', source = 'sam4llis/nvim-tundra'
 }
-
-M.transparent_at_startup = false
-
-return M

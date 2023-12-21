@@ -1,6 +1,6 @@
 -- [[ Theme manager ]]
 
-local theme = require('settings.themes')
+local theme = require('settings.theme')
 local colors = require('settings.colors')
 local M = {}
 M.background_colors = {}
@@ -42,13 +42,10 @@ end
 if not M.initialized then
   -- Set custom colors before (!) toggling transparency
   vim.opt.background = 'dark'
-  if theme.selected_theme.custom_colors ~= nil then
-    for key, color in pairs(theme.selected_theme.custom_colors) do
+  if theme.custom_colors ~= nil then
+    for key, color in pairs(theme.custom_colors) do
       vim.cmd(string.format('hi %s %s', key, color))
     end
-  end
-  if theme.transparent_at_startup then
-    M.toggle_transparency()
   end
   M.initialized = true
 end

@@ -1,11 +1,11 @@
 -- [[ Colorscheme ]]
--- Sets the current colorscheme (in lua/settings/themes.lua)
+-- Sets the current colorscheme (in lua/settings/theme.lua)
 
 return {
-  require('settings.themes').selected_theme.source,
+  require('settings.theme').source,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme(require('settings.themes').selected_theme.name)
+    vim.cmd.colorscheme(require('settings.theme').name)
   end,
   opts = {
     no_italic = true,
