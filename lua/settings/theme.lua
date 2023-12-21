@@ -1,9 +1,9 @@
 -- [[ Current theme ]]
 
 local colors = require('settings.colors')
+-- name = '', source = '', custom_colors = {} (optional table from settings.colors)
 return {
-    -- name = '', source = '', custom_colors = {} (optional)
-    -- name = 'vscode', source = 'mofiqul/vscode.nvim', custom_colors = colors.vscode_custom_colors
+    -- name = 'vscode', source = 'mofiqul/vscode.nvim'
     -- name = 'onedark', source = 'navarasu/onedark.nvim'
     -- name = 'tokyonight', source = 'folke/tokyonight.nvim'
     -- name = 'everforest', source = 'sainnhe/everforest'
