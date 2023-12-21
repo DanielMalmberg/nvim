@@ -1,3 +1,8 @@
+-- NOTE: Additonal config files with keymaps:
+-- plugins/mason_lspconfig.lua
+-- plugins/treesitter.lua
+-- features/wordwrapper.lua
+
 -- UNBIND UNNECESSARY KEYMAPS
 ----------------------------------
 vim.api.nvim_set_keymap('n', '<C-l>', '<Nop>', { noremap = true, silent = true })
