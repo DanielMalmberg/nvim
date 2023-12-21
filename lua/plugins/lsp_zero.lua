@@ -1,5 +1,5 @@
 -- [[ LSP Zero ]]
---
+-- A collection of functions and plugins that makes it easy to setup LSPs
 
 return {
   "VonHeikemen/lsp-zero.nvim",

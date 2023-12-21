@@ -1,5 +1,9 @@
 -- [[ TODO Commments ]]
--- Adds more detail to commments starting with "TODO:", "BUG:" "WARNING:", etc
+-- Make different types of comments and have them searchable in Telescope
+-- For example:
+-- "TODO: text"
+-- "BUG: text"
+-- "WARNING: text"
 
 return {
   "folke/todo-comments.nvim",

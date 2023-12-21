@@ -1,5 +1,5 @@
 -- [[ Mason LSP config ]]
---
+-- Bridges Mason.nvim with the LspConfig plugin
 
 return {
 

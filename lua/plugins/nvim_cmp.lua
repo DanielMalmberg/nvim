@@ -1,4 +1,5 @@
 -- [[ Nvim-cmp ]]
+-- Code completion suggetions (based on the current LSP)
 
 return {
   "hrsh7th/cmp-nvim-lsp",
