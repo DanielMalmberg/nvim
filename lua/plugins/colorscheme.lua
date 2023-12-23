@@ -1,11 +1,19 @@
 -- [[ Colorscheme ]]
--- Sets the current colorscheme (in lua/settings/theme.lua)
+
+local theme = require 'settings.theme'
 
 return {
-  require('settings.theme').source,
+  theme.source,
+  lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme(require('settings.theme').name)
+    vim.cmd.colorscheme(theme.name)
+    vim.opt.background = 'dark'
+    if theme.custom_colors ~= nil then
+      for key, color in pairs(theme.custom_colors) do
+        vim.cmd(string.format('hi %s %s', key, color))
+      end
+    end
   end,
   opts = {
     no_italic = true,
