@@ -50,6 +50,11 @@ local keymaps = {
         ['<Space>'] = { '<Nop>', "Disable Space-key in visual" },
         ['<leader>p'] = { '\"_dP', "Paste and keep text in the yank register" },
 
+        -- WINDOWS
+        ---------------------------------------
+        ['±'] = { '<C-w>3>', "Increase window width (3 steps)"},
+        ['–'] = { '<C-w>3<', "Decrease window width (3 steps)"},
+
         -- BUFFERS
         ---------------------------------------
         ['<Tab>'] = { ':bp<CR>', "Go to next buffer" },
