@@ -66,7 +66,7 @@ local keymaps = {
         -- FILES
         ---------------------------------------
         ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)" },
-        ['<leader>.q'] = { ':q<CR>', "Quits Neovim (if buffers are saved)" },
+        ['<leader>.q'] = { ':qa<CR>', "Quits Neovim (if buffers are saved)" },
         ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
 
         -- LSP
