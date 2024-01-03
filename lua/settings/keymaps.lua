@@ -30,6 +30,7 @@ local keymaps = {
         ['<S-Tab>'] = { '<gv', "Back-indent selection in visual mode" },
         ['J'] = { ":m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
         ['K'] = { ":m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
+        ['π'] = {'\"_dP', "Paste yanked text over selected text and keep the yanked text in the clipboard" } -- opt + p
     },
     normal = {
         -- GUI
@@ -48,7 +49,6 @@ local keymaps = {
         ['<S-BS>'] = { 'dd', "Delete row in normal mode (use on last row)" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in normal" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in visual" },
-        ['<leader>p'] = { '\"_dP', "Paste and keep text in the yank register" },
 
         -- WINDOWS
         ---------------------------------------
