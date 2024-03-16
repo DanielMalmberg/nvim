@@ -15,7 +15,8 @@ M.backgrounds = {
     'diffChanged',
     'diffRemoved',
     'EndOfBuffer',
-    'TelescopeNormal'
+    'TelescopeNormal',
+    'ToggleTerm1Normal',
 }
 
 M.vscode_custom_colors = {
