@@ -8,11 +8,6 @@
 vim.api.nvim_set_keymap('n', '<C-l>', '<Nop>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('x', '<C-l>', '<Nop>', { noremap = true, silent = true })
 
--- EXPRESSIONS
-----------------------------------
--- Auto-format brackets - Automatically insert an empty line and indent one step when pressing enter after '(', '[' or '{'
-vim.api.nvim_set_keymap('i', '<CR>', 'getline(".")[col(".") - 2] == "{" || getline(".")[col(".") - 2] == "(" || getline(".")[col(".") - 2] == "[" ? "\\n\\<Esc>O\\t" : "\\n"', { expr = true })
-
 -- CUSTOM KEYMAPS
 ----------------------------------
 -- ['key'] = { 'action', "description" }
