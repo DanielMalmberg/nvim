@@ -7,6 +7,9 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
+    if theme.name == 'tundra' then
+      require ('settings.tundra')
+    end
     vim.cmd.colorscheme(theme.name)
     vim.opt.background = 'dark'
     if theme.custom_colors ~= nil then
@@ -25,3 +28,4 @@ return {
     }
   }
 }
+
