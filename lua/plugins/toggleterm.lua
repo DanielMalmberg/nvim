@@ -6,7 +6,7 @@ return {
   config = function()
     require('toggleterm').setup({
       size = 20,
-      open_mapping = [[√]], -- opt + j
+      open_mapping = vim.g.is_macos and [[√]] or [[<M-j>]], -- opt + j
       hide_numbers = true,
       shade_terminals = true,
       shading_factor = 0.5,

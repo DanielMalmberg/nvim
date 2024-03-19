@@ -17,6 +17,9 @@
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
+-- Detect OS
+vim.g.is_macos = vim.loop.os_uname().sysname == 'Darwin'
+
 require('managers')
 require('settings')
 require('features')

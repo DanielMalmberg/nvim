@@ -1,4 +1,5 @@
 -- NOTE: Additonal config files with keymaps:
+
 -- plugins/mason_lspconfig.lua
 -- plugins/treesitter.lua
 -- features/wordwrapper.lua
@@ -25,7 +26,7 @@ local keymaps = {
         ['<S-Tab>'] = { '<gv', "Back-indent selection in visual mode" },
         ['J'] = { ":m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
         ['K'] = { ":m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
-        ['π'] = {'\"_dP', "Paste yanked text over selected text and keep the yanked text in the clipboard" } -- opt + p
+        [vim.g.is_macos and 'π' or '<M-p>'] = {'\"_dP', "Paste yanked text over selected text and keep the yanked text in the clipboard" } -- opt + p
     },
     normal = {
         -- GUI
@@ -91,7 +92,7 @@ local keymaps = {
 
         -- NVIM-TREE
         ---------------------------------------
-        ['˛'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- (symbol for opt + h)
+        [vim.g.is_macos and '˛' or '<M-h>'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- (symbol for opt + h)
 
         -- UNDOTREE
         ---------------------------------------
@@ -99,7 +100,7 @@ local keymaps = {
 
         --TAGBAR
         ---------------------------------------
-        ["ﬁ"] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- (symbol for opt + l)
+        [vim.g.is_macos and "ﬁ" or '<M-l>'] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- (symbol for opt + l)
         ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
         ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
 
