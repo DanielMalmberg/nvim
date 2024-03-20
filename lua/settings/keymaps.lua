@@ -44,7 +44,6 @@ local keymaps = {
         ['<BS>'] = { 'ddk', "Delete row in normal mode" },
         ['<S-BS>'] = { 'dd', "Delete row in normal mode (use on last row)" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in normal" },
-        ['<Space>'] = { '<Nop>', "Disable Space-key in visual" },
 
         -- WINDOWS
         ---------------------------------------
