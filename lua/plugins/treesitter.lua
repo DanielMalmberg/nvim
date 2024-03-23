@@ -21,6 +21,7 @@ return {
         'python',
         'rust',
         'typescript',
+        'javascript',
         'vimdoc',
         'vim'
       },
