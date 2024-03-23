@@ -1,19 +1,20 @@
 -- [[ Colorscheme ]]
 
-local theme = require 'settings.theme'
+local themes = require 'settings.theme'
 
 return {
-  theme.source,
+  themes.startup_theme.source,
+  dependencies = themes.get_other_themes_sources(),
   lazy = false,
   priority = 1000,
   config = function()
-    if theme.name == 'tundra' then
+    if themes.startup_theme.name == 'tundra' then
       require ('settings.tundra')
     end
-    vim.cmd.colorscheme(theme.name)
+    vim.cmd.colorscheme(themes.startup_theme.name)
     vim.opt.background = 'dark'
-    if theme.custom_colors ~= nil then
-      for key, color in pairs(theme.custom_colors) do
+    if themes.startup_theme.custom_colors ~= nil then
+      for key, color in pairs(themes.startup_theme.custom_colors) do
         vim.cmd(string.format('hi %s %s', key, color))
       end
     end

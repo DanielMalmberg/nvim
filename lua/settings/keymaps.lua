@@ -32,6 +32,8 @@ local keymaps = {
         -- GUI
         ---------------------------------------
         ['<S-u>'] = { "<cmd>lua require('features.toggle_transparency').toggle_transparency()<CR>", "Toggle transparency" },
+        ['<leader>tn'] = { "<cmd>lua require('features.theme_switcher').next_theme()<CR>", "Switch to next custom installed theme"},
+        ['<leader>tp'] = { "<cmd>lua require('features.theme_switcher').previous_theme()<CR>", "Switch to previous custom installed theme"},
 
         -- NAVIGATING
         ---------------------------------------
