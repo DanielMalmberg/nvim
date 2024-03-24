@@ -1,7 +1,10 @@
 -- NOTE: Additonal config files with keymaps:
 
 -- plugins/mason_lspconfig.lua
+-- plugins/nvim_cmp.lua
+-- plugins/toggleterm.lua
 -- plugins/treesitter.lua
+-- features/format_brackets.lua
 -- features/wordwrapper.lua
 
 -- UNBIND UNNECESSARY KEYMAPS
