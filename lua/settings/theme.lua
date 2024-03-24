@@ -3,10 +3,12 @@
 local colors = require('settings.colors')
 local M = {}
 
+-- format: name = 'name of the theme', source = 'github repo'
 M.startup_theme = {
     name = 'tundra', source = 'sam4llis/nvim-tundra'
 }
 
+-- format: { name = 'name of the theme', source = 'github repo', custom_colors = colors.example_table }
 M.other_themes = {
     -- { name = 'tundra', source = 'sam4llis/nvim-tundra' },
     { name = 'vscode', source = 'mofiqul/vscode.nvim' },

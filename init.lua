@@ -13,12 +13,12 @@
 --  - Annoying popup message added in newer vesions when toggling diagnostics on
 -- -----------------------------------------------------------
 
+-- Detect OS
+vim.g.is_macos = vim.loop.os_uname().sysname == 'Darwin'
+
 --  Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
-
--- Detect OS
-vim.g.is_macos = vim.loop.os_uname().sysname == 'Darwin'
 
 require('managers')
 require('settings')
