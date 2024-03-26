@@ -11,11 +11,11 @@ M.startup_theme = {
 -- format: { name = 'name of the theme', source = 'github repo', custom_colors = colors.example_table }
 M.other_themes = {
     -- { name = 'tundra', source = 'sam4llis/nvim-tundra' },
-    { name = 'vscode', source = 'mofiqul/vscode.nvim' },
-    { name = 'onedark', source = 'navarasu/onedark.nvim' },
+    -- { name = 'onedark', source = 'navarasu/onedark.nvim' },
     { name = 'rose-pine-moon', source = 'rose-pine/neovim' },
     { name = 'catppuccin-mocha', source = 'catppuccin/nvim' },
-    { name = 'dracula', source = 'Mofiqul/dracula.nvim' },
+    { name = 'vscode', source = 'mofiqul/vscode.nvim' },
+    -- { name = 'dracula', source = 'Mofiqul/dracula.nvim' },
     -- { name = 'tokyonight', source = 'folke/tokyonight.nvim' },
     -- { name = 'nightfly', source = 'bluz71/vim-nightfly-colors' },
 }
