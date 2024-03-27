@@ -12,7 +12,8 @@ M.startup_theme = {
 M.other_themes = {
     -- { name = 'tundra', source = 'sam4llis/nvim-tundra' },
     -- { name = 'onedark', source = 'navarasu/onedark.nvim' },
-    { name = 'rose-pine-moon', source = 'rose-pine/neovim' },
+    { name = 'rose-pine-main', source = 'rose-pine/neovim' },
+    -- { name = 'rose-pine-moon', source = 'rose-pine/neovim' },
     { name = 'catppuccin-mocha', source = 'catppuccin/nvim' },
     { name = 'vscode', source = 'mofiqul/vscode.nvim' },
     -- { name = 'dracula', source = 'Mofiqul/dracula.nvim' },
