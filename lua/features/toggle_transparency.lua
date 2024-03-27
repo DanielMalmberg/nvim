@@ -4,7 +4,7 @@ local colors = require('settings.colors')
 
 local M = {}
 M.background_colors = {}
-M.transparent = false
+vim.g.transparent = false
 
 local function set_background_color(element, color)
   vim.cmd(string.format('highlight %s guibg=%s', element, color))
@@ -23,16 +23,16 @@ M.toggle_transparency = function()
         end
       end
       -- Toggle off transparency
-      if M.transparent and M.background_colors[element] then
+      if vim.g.transparent and M.background_colors[element] then
         set_background_color(element, M.background_colors[element])
         -- Toggle on transparency
-      elseif not M.transparent then
+      elseif not vim.g.transparent then
         set_background_color(element, "NONE")
       end
     end
   end
   -- Reverse toggle
-  M.transparent = not M.transparent
+  vim.g.transparent = not vim.g.transparent
 end
 
 return M

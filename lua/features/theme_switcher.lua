@@ -7,6 +7,7 @@ local M = {}
 M.theme_index = 0
 
 M.next_theme = function()
+    vim.g.transparent = false
     vim.api.nvim_command('echo ""')
     M.theme_index = M.theme_index + 1
     if M.theme_index > #themes then
@@ -17,6 +18,7 @@ M.next_theme = function()
 end
 
 M.previous_theme = function()
+    vim.g.transparent = false
     vim.api.nvim_command('echo ""')
     M.theme_index = M.theme_index - 1
     if M.theme_index < 1 then
