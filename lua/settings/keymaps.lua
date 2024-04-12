@@ -61,7 +61,7 @@ local keymaps = {
         ['<S-Tab>'] = { ':bn<CR>', "Go to previous buffer" },
         ['<leader>ls'] = { ':ls<CR>', "List all open buffers" },
         ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "Close current buffer" },
-        ['<leader>cw'] = { ':bufdo bd<CR>', "Close all open buffers" },
+        ['<leader>X'] = { ':bufdo bd<CR>', "Close all open buffers" },
 
         -- FILES
         ---------------------------------------
