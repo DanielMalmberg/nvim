@@ -18,3 +18,12 @@ end
 
 -- Define the custom command
 vim.cmd("command! -nargs=+ Replace lua replace_in_quickfix(<f-args>)")
+
+local M = {}
+M.replace_in_quickfix_keymap = function ()
+  local text = vim.fn.input("Enter the text pattern to replace: ") 
+  local replacement = vim.fn.input("Enter the replacement text: ") 
+  replace_in_quickfix(text, replacement)
+end
+
+return M
