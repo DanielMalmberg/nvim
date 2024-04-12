@@ -23,7 +23,8 @@ return {
         'typescript',
         'javascript',
         'vimdoc',
-        'vim'
+        'vim',
+        'c_sharp',
       },
 
       -- Autoinstall languages that are not installed
