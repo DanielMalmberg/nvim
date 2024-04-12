@@ -81,6 +81,7 @@ local keymaps = {
         ['<leader>uc'] = { ':e!<CR>', "[U]ndo unsaved [c]hanges in current buffer" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Replace all occurrences of current word in current file (not bound to LSP)" },
+        ['<leader>rq'] = { ":lua require('features.replace_quickfix').replace_quickfix()<CR>", " Replace all occurences of a text in the current quickfix list " },
 
         -- TELESCOPE
         ---------------------------------------
