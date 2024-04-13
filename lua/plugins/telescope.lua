@@ -18,6 +18,13 @@ return {
             ['<C-d>'] = false,
           },
         },
+        file_ignore_patterns = {
+          -- logfiles
+          ".log",
+          -- python files
+          "__init__.py",
+          ".pyc",
+        },
       },
     }
     -- Enable telescope fzf native, if installed
