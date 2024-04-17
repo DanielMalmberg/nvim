@@ -20,7 +20,7 @@ return {
       lsp_map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
       vim.keymap.set("n", "<leader>rn", function()
         return ":IncRename " .. vim.fn.expand("<cword>")
-      end, { expr = true, desc = "Rename all occurences of word in LSP" })
+      end, { expr = true, desc = "Rename all occurrences of word in LSP" })
 
 
       lsp_map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
