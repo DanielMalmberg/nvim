@@ -4,6 +4,7 @@
 return {
   "VonHeikemen/lsp-zero.nvim",
   branch = 'v2.x',
+  priority = 950,
   dependencies = {
     -- LSP Support
     "neovim/nvim-lspconfig",             -- Required
@@ -24,5 +25,8 @@ return {
     -- Required for lsp-trouble.nvim
     "kyazdani42/nvim-web-devicons",
     "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
-  }
+  },
+  config = function()
+    require 'toggle_lsp_diagnostics'.init({ start_on = false })
+  end
 }

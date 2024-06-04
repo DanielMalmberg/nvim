@@ -16,13 +16,10 @@
 -- Detect OS
 vim.g.is_macos = vim.loop.os_uname().sysname == 'Darwin'
 
---  Must happen before plugins are required (otherwise wrong leader will be used)
+-- Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
 require('managers')
 require('settings')
 require('features')
-
--- Turn off LSP diagnostics on start
-require 'toggle_lsp_diagnostics'.init({ start_on = false })
