@@ -57,6 +57,7 @@ return {
       html = {},
       jsonls = {},
       tsserver = {},
+      bashls = {},
       pylsp = {},
       lua_ls = {
         Lua = {

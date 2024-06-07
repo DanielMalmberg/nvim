@@ -1,6 +1,7 @@
 -- INFO: Dependencies
 -- neovim
 -- node.js
+-- shellcheck (for bashls LSP)
 -- ripgrep (for Telescope Live Grep)
 -- fd (for Telescope - https://github.com/sharkdp/fd) 
 -- Universal Ctags (for Tagbar - https://ctags.io/)
