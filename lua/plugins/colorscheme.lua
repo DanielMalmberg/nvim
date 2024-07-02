@@ -18,6 +18,9 @@ return {
         vim.cmd(string.format('hi %s %s', key, color))
       end
     end
+    if themes.transparent_at_startup then
+      require('features.toggle_transparency').toggle_transparency()
+    end
   end,
   opts = {
     no_italic = true,

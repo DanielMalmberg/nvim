@@ -3,6 +3,8 @@
 local colors = require('settings.colors')
 local M = {}
 
+M.transparent_at_startup = true
+
 -- format: name = 'name of the theme', source = 'github repo'
 M.startup_theme = {
     name = 'tundra', source = 'sam4llis/nvim-tundra'
