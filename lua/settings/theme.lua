@@ -3,7 +3,7 @@
 local colors = require('settings.colors')
 local M = {}
 
-M.transparent_at_startup = true
+M.transparent_at_startup = false
 
 -- format: name = 'name of the theme', source = 'github repo'
 M.startup_theme = {
