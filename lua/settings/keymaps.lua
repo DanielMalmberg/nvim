@@ -29,7 +29,8 @@ local keymaps = {
         ['<S-Tab>'] = { '<gv', "Back-indent selection in visual mode" },
         ['J'] = { ":m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
         ['K'] = { ":m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
-        [vim.g.is_macos and 'π' or '<M-p>'] = {'\"_dP', "Paste yanked text over selected text and keep the yanked text in the clipboard" } -- opt + p
+        ['<leader>d'] = { '"_d', "Delete highlighted text without adding it to yank register" },
+        ['<leader>p'] = {'"_dP', "Paste yanked text over selected text and keep the yanked text in the clipboard" }
     },
     normal = {
         -- GUI
