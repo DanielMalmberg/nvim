@@ -82,6 +82,7 @@ local keymaps = {
         ['<leader>uc'] = { ':e!<CR>', "[U]ndo unsaved [c]hanges in current buffer" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Rename all occurrences of word in file" },
+        ['<leader>wp'] = {'viw"_dP', "Paste yanked text over current word and keep the yanked text in the clipboard" },
         ["<leader>rq"] = { ":lua require('features.replace_in_quickfix').replace_in_quickfix_keymap()<CR>", "Rename all occurrences of word in quickfix" },
 
         -- TELESCOPE
