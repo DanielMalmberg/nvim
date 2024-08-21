@@ -2,6 +2,7 @@
 
 return {
   'mfussenegger/nvim-dap',
+  enabled = true,
   dependencies = {
     'leoluz/nvim-dap-go',
     'rcarriga/nvim-dap-ui',

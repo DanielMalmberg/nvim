@@ -3,6 +3,7 @@
 
 return {
   "preservim/tagbar",
+  enabled = true,
   config = function()
     -- Removes the help-text at the top of the window
     vim.api.nvim_exec('let g:tagbar_compact = 2', false)

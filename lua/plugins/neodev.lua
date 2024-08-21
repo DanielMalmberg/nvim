@@ -3,6 +3,7 @@
 
 return {
   "folke/neodev.nvim",
+  enabled = true,
   priority = 900,
   dependencies = {
     "neovim/nvim-lspconfig",

@@ -3,6 +3,7 @@
 
 return {
   "williamboman/mason.nvim",
+  enabled = true,
   priority = 850,
   build = function()
     pcall(vim.cmd, 'MasonUpdate')

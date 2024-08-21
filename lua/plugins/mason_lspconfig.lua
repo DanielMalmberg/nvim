@@ -2,8 +2,8 @@
 -- Bridges Mason.nvim with the LspConfig plugin
 
 return {
-
   "williamboman/mason-lspconfig.nvim",
+  enabled = true,
   config = function()
     --  This function gets run when an LSP connects to a particular buffer.
     local on_attach = function(_, bufnr)

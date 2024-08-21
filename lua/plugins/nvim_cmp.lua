@@ -3,6 +3,7 @@
 
 return {
   "hrsh7th/cmp-nvim-lsp",
+  enabled = true,
   config = function()
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'

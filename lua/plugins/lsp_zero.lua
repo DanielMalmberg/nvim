@@ -3,6 +3,7 @@
 
 return {
   "VonHeikemen/lsp-zero.nvim",
+  enabled = true,
   branch = 'v2.x',
   priority = 950,
   dependencies = {

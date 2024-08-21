@@ -3,6 +3,7 @@
 
 return {
   'lukas-reineke/indent-blankline.nvim',
+  enabled = true,
   opts = {
     char = '┊',
     show_trailing_blankline_indent = false,

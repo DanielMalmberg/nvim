@@ -3,6 +3,7 @@
 
 return {
   "smjonas/inc-rename.nvim",
+  enabled = true,
   config = function()
     require("inc_rename").setup {
       cmd_name = "IncRename",    -- the name of the command

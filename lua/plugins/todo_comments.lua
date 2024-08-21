@@ -9,6 +9,7 @@
 
 return {
   "folke/todo-comments.nvim",
+  enabled = true,
   config = function()
     require("todo-comments").setup {
       -- signs = true, -- show icons in the signs column
