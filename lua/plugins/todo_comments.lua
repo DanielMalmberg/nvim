@@ -4,6 +4,8 @@
 -- INFO: text
 -- TODO: text
 -- BUG: text
+-- TEST: text
+-- HACK: text
 -- WARNING: text
 -- PERFORMANCE: text
 
