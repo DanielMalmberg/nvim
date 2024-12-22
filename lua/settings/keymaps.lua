@@ -45,10 +45,6 @@ local keymaps = {
         ['N'] = { 'Nzzzv', "Keeps the cursos in the middle when stepping through searches" },
         ['<C-d>'] = { '0<C-d>zz', "Keeps the cursor in the middle when jumping down the page" },
         ['<C-u>'] = { '0<C-u>zz', "Keeps the cursor in the middle when jumping up the page" },
-        ['<CR>'] = { 'o<ESC>', "Create new row in normal mode" },
-        ['<S-CR>'] = { '<S-o><ESC>', "Create new row in normal mode (above)" },
-        ['<BS>'] = { 'ddk', "Delete row in normal mode" },
-        ['<S-BS>'] = { 'dd', "Delete row in normal mode (use on last row)" },
         ['<Space>'] = { '<Nop>', "Disable Space-key in normal" },
 
         -- WINDOWS
@@ -173,3 +169,9 @@ end
 -- Expressions
 -- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 -- vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+--
+-- Editing
+-- ['<CR>'] = { 'o<ESC>', "Create new row in normal mode" },
+-- ['<S-CR>'] = { '<S-o><ESC>', "Create new row in normal mode (above)" },
+-- ['<BS>'] = { 'ddk', "Delete row in normal mode" },
+-- ['<S-BS>'] = { 'dd', "Delete row in normal mode (use on last row)" },
