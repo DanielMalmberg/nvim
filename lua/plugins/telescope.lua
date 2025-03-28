@@ -21,7 +21,7 @@ return {
         },
         file_ignore_patterns = {
           -- logfiles
-          ".log",
+          -- ".log",
           -- python files
           "__init__.py",
           ".pyc",
