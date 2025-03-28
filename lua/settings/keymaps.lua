@@ -27,8 +27,8 @@ local keymaps = {
     visual = {
         ['<Tab>'] = { '>gv', "Indent selection in visual mode" },
         ['<S-Tab>'] = { '<gv', "Back-indent selection in visual mode" },
-        ['J'] = { ":m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
-        ['K'] = { ":m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
+        ['J'] = { "<cmd>m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
+        ['K'] = { "<cmd>m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
         ['<leader>d'] = { '"_d', "Delete highlighted text without adding it to yank register" },
         ['<leader>p'] = {'"_dP', "Paste yanked text over selected text and keep the yanked text in the clipboard" }
     },
@@ -54,40 +54,40 @@ local keymaps = {
 
         -- BUFFERS
         ---------------------------------------
-        ['<Tab>'] = { ':bp<CR>', "Go to next buffer" },
-        ['<S-Tab>'] = { ':bn<CR>', "Go to previous buffer" },
-        ['<leader>ls'] = { ':ls<CR>', "List all open buffers" },
-        ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "Close current buffer" },
-        ['<leader>X'] = { ':bufdo bd<CR>', "Close all open buffers" },
+        ['<Tab>'] = { '<cmd>bp<CR>', "Go to next buffer" },
+        ['<S-Tab>'] = { '<cmd>bn<CR>', "Go to previous buffer" },
+        ['<leader>ls'] = { '<cmd>ls<CR>', "List all open buffers" },
+        ["<leader>x"] = { "<cmd>lua require('features.close_buffer').close_current_buffer()<CR>", "Close current buffer" },
+        ['<leader>X'] = { '<cmd>bufdo bd<CR>', "Close all open buffers" },
 
         -- FILES
         ---------------------------------------
-        ['<leader>.s'] = { ':w<CR>', "Save file (the current buffer)" },
-        ['<leader>.q'] = { ':qa<CR>', "Quits Neovim (if buffers are saved)" },
-        ['<leader>exe'] = { ':w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
+        ['<leader>.s'] = { '<cmd>w<CR>', "Save file (the current buffer)" },
+        ['<leader>.q'] = { '<cmd>qa<CR>', "Quits Neovim (if buffers are saved)" },
+        ['<leader>exe'] = { '<cmd>w<CR><cmd>!chmod +x %<CR>', "Turns current file into an executable program" },
 
         -- LSP
         ---------------------------------------
-        ['<C-M-f>'] = { ':Format<CR>', "Format code (according to current LSP)" },
+        ['<C-M-f>'] = { '<cmd>Format<CR>', "Format code (according to current LSP)" },
         ['<leader>te'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
-        ['<leader>tt'] = { ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
-        ['<leader>lt'] = { ':TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
+        ['<leader>tt'] = { '<cmd>ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
+        ['<leader>lt'] = { '<cmd>TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
 
         -- EDITING
         ---------------------------------------
         ['vi<C-b>'] = { 'vi[', "Select everything inside closest square brackets" },
         ['di<C-b>'] = { 'di[', "Delete everything inside closest square brackets" },
-        ['<leader>uc'] = { ':e!<CR>', "[U]ndo unsaved [c]hanges in current buffer" },
-        ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
+        ['<leader>uc'] = { '<cmd>e!<CR>', "[U]ndo unsaved [c]hanges in current buffer" },
+        ['<leader>rp'] = { '<cmd>%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Rename all occurrences of word in file" },
         ['<leader>wp'] = {'viw"_dP', "Paste yanked text over current word and keep the yanked text in the clipboard" },
-        ["<leader>rq"] = { ":lua require('features.replace_in_quickfix').replace_in_quickfix_keymap()<CR>", "Rename all occurrences of word in quickfix" },
+        ["<leader>rq"] = { "<cmd>lua require('features.replace_in_quickfix').replace_in_quickfix_keymap()<CR>", "Rename all occurrences of word in quickfix" },
 
         -- TELESCOPE
         ---------------------------------------
         ['<leader>?'] = { require('telescope.builtin').oldfiles, "[?] Find recently opened files" },
         ['<C-b>'] = { require('telescope.builtin').buffers, "Find existing [b]uffers" },
-        ['<leader><C-f>'] = { ':Telescope current_buffer_fuzzy_find<CR>', "[/] Fuzzily search in current buffer" },
+        ['<leader><C-f>'] = { '<cmd>Telescope current_buffer_fuzzy_find<CR>', "[/] Fuzzily search in current buffer" },
         ['<C-f>'] = { require('telescope.builtin').live_grep, "[S]earch by [G]rep" },
         ['<C-p>'] = { require('telescope.builtin').find_files, "[S]earch [F]iles" },
         ['<leader>sh'] = { require('telescope.builtin').help_tags, "[S]earch [H]elp" },
@@ -95,24 +95,29 @@ local keymaps = {
         ['<leader>wd'] = { require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics" },
         ['<leader>ds'] = { require('telescope.builtin').lsp_document_symbols, "LSP [D]ocument [S]ymbols" },
 
+        -- SPECTRE
+        ---------------------------------------
+        ['<leader>S'] = { '<cmd>lua require("spectre").toggle()<CR>', "Open [Spectre]" },
+        ['<leader>sf'] = { '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', "Open [S]pectre for current [f]ile" },
+
         -- NVIM-TREE
         ---------------------------------------
-        [vim.g.is_macos and '˛' or '<M-h>'] = { ':NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- (symbol for opt + h)
+        [vim.g.is_macos and '˛' or '<M-h>'] = { '<cmd>NvimTreeFindFileToggle<CR>', "Open File Explorer" }, -- (symbol for opt + h)
 
         -- UNDOTREE
         ---------------------------------------
-        ['<leader>ut'] = { ':UndotreeToggle<CR>', 'Toggle UndoTree view' },
+        ['<leader>ut'] = { '<cmd>UndotreeToggle<CR>', 'Toggle UndoTree view' },
 
         --TAGBAR
         ---------------------------------------
-        [vim.g.is_macos and "ﬁ" or '<M-l>'] = { ':TagbarToggle<CR>', "Show/hide the file outline" }, -- (symbol for opt + l)
-        ['<C-t>'] = { ':TagbarJumpNext<CR>', "Jump to the next filetag" },
-        ['<C-S-t>'] = { ':TagbarJumpPrev<CR>', "Jump to the previous filetag" },
+        [vim.g.is_macos and "ﬁ" or '<M-l>'] = { '<cmd>TagbarToggle<CR>', "Show/hide the file outline" }, -- (symbol for opt + l)
+        ['<C-t>'] = { '<cmd>TagbarJumpNext<CR>', "Jump to the next filetag" },
+        ['<C-S-t>'] = { '<cmd>TagbarJumpPrev<CR>', "Jump to the previous filetag" },
 
         -- DIFFVIEW (GIT)
         ---------------------------------------
-        ['<leader>git'] = { ":DiffviewOpen<CR>", "Open git diffview" },
-        ['<leader>gc'] = { ":DiffviewClose<CR>", "Close git diffview" },
+        ['<leader>git'] = { "<cmd>DiffviewOpen<CR>", "Open git diffview" },
+        ['<leader>gc'] = { "<cmd>DiffviewClose<CR>", "Close git diffview" },
 
         -- DEBUGGER
         ---------------------------------------
@@ -126,11 +131,11 @@ local keymaps = {
 
         -- ILLUMINATE
         ---------------------------------------
-        ['<leader>i'] = { ':IlluminateToggle<CR>', "Toggle illuminate (highlight) plugin" },
+        ['<leader>i'] = { '<cmd>IlluminateToggle<CR>', "Toggle illuminate (highlight) plugin" },
 
         -- HOP
         ---------------------------------------
-        ['<S-h>'] = { ':HopWord<CR>', "[H]op to [W]ord" },
+        ['<S-h>'] = { '<cmd>HopWord<CR>', "[H]op to [W]ord" },
     },
     normal_and_visual = {
         ['<C-k>'] = { '4k', "Faster scrolling (up)" },
@@ -163,8 +168,8 @@ end
 -- ['<leader>q'] = { vim.diagnostic.setloclist, "Open diagnostics list" },
 
 -- Hop
--- ['<S-h><S-a>'] = { ':HopAnywhere<CR>', "[H]op [A]nywhere" },
--- ['<S-h><S-l>'] = { ':HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
+-- ['<S-h><S-a>'] = { '<cmd>HopAnywhere<CR>', "[H]op [A]nywhere" },
+-- ['<S-h><S-l>'] = { '<cmd>HopWordCurrentLine<CR>', "[H]op to word on current [L]ine" },
 --
 -- Expressions
 -- vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -175,3 +180,6 @@ end
 -- ['<S-CR>'] = { '<S-o><ESC>', "Create new row in normal mode (above)" },
 -- ['<BS>'] = { 'ddk', "Delete row in normal mode" },
 -- ['<S-BS>'] = { 'dd', "Delete row in normal mode (use on last row)" },
+--
+-- Spectre
+-- ['<leader>sw'] = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', "Open [S]pectre for highlighted [w]ord" },
