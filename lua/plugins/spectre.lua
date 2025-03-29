@@ -7,11 +7,16 @@ return {
   config = function()
     require('spectre').setup({
       result_padding = '', -- character that shows up before search result
-      default = {
-        replace = {
-          cmd = 'sed'
-        }
-      }
+      replace_engine = {
+        ["sed"] = {
+          cmd = "sed",
+          args = {
+            "-i",
+            "",
+            "-E",
+          },
+        },
+      },
     })
   end
 }
