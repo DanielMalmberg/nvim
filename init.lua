@@ -14,6 +14,8 @@
 --  - Annoying popup message added in newer vesions when toggling diagnostics on
 -- -----------------------------------------------------------
 
+-- BEFORE
+
 -- Detect OS
 vim.g.is_macos = vim.loop.os_uname().sysname == 'Darwin'
 
@@ -24,6 +26,17 @@ vim.g.maplocalleader = ','
 -- Hide deprecated warnings 
 vim.deprecate = function() end
 
+-- -----------------------------------------------------------
+
+-- INITIALIZE
+
 require('managers')
 require('settings')
 require('features')
+
+-- -----------------------------------------------------------
+
+-- AFTER
+
+-- Disable Copilot at startup
+-- vim.cmd('Copilot disable')
