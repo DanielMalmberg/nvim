@@ -56,7 +56,7 @@ return {
     local servers = {
       html = {},
       jsonls = {},
-      tsserver = {},
+      ts_ls = {},
       bashls = {},
       pylsp = {},
       lua_ls = {

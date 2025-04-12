@@ -21,6 +21,9 @@ vim.g.is_macos = vim.loop.os_uname().sysname == 'Darwin'
 vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
+-- Hide deprecated warnings 
+vim.deprecate = function() end
+
 require('managers')
 require('settings')
 require('features')

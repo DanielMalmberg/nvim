@@ -1,9 +1,11 @@
 -- [[ Debugger ]]
+-- This module configures the nvim-dap plugin for debugging in Neovim. 
 
 return {
   'mfussenegger/nvim-dap',
   enabled = true,
   dependencies = {
+    'nvim-neotest/nvim-nio',
     'leoluz/nvim-dap-go',
     'rcarriga/nvim-dap-ui',
     'williamboman/mason.nvim',
