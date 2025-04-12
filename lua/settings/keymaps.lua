@@ -71,7 +71,7 @@ local keymaps = {
         ['<C-M-f>'] = { '<cmd>Format<CR>', "Format code (according to current LSP)" },
         ['<leader>te'] = { vim.diagnostic.open_float, "Open floating diagnostic message" },
         ['<leader>tt'] = { '<cmd>ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
-        ['<leader>lt'] = { '<cmd>TroubleToggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
+        ['<leader>lt'] = { '<cmd>Trouble diagnostics toggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
 
         -- EDITING
         ---------------------------------------
