@@ -27,8 +27,8 @@ local keymaps = {
     visual = {
         ['<Tab>'] = { '>gv', "Indent selection in visual mode" },
         ['<S-Tab>'] = { '<gv', "Back-indent selection in visual mode" },
-        ['J'] = { "<cmd>m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
-        ['K'] = { "<cmd>m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
+        ['J'] = { ":m '>+1><CR>gv=gv", "Move the highlighted text down one row" },
+        ['K'] = { ":m '<-2><CR>gv=gv", "Move the highlighted text up one row" },
         ['<leader>d'] = { '"_d', "Delete highlighted text without adding it to yank register" },
         ['<leader>p'] = {'"_dP', "Paste yanked text over selected text and keep the yanked text in the clipboard" }
     },
