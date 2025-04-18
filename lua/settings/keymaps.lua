@@ -38,6 +38,7 @@ local keymaps = {
         ['<S-u>'] = { ":lua require('features.toggle_transparency').toggle_transparency()<CR>", "Toggle transparency" },
         ['<leader>tn'] = { ":lua require('features.theme_switcher').next_theme()<CR>", "Switch to next custom installed theme"},
         ['<leader>tp'] = { ":lua require('features.theme_switcher').previous_theme()<CR>", "Switch to previous custom installed theme"},
+        ['<leader>-'] = { ":Telescope colorscheme<CR>", "Open theme selector" },
 
         -- NAVIGATING
         ---------------------------------------
@@ -97,7 +98,7 @@ local keymaps = {
 
         -- SPECTRE
         ---------------------------------------
-        ['<leader>S'] = { ':lua require("spectre").toggle()<CR>', "Open [Spectre]" },
+        ['<leader>sp'] = { ':lua require("spectre").toggle()<CR>', "Open [Spectre]" },
         ['<leader>sf'] = { ':lua require("spectre").open_file_search({select_word=true})<CR>', "Open [S]pectre for current [f]ile" },
 
         -- NVIM-TREE
