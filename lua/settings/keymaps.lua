@@ -72,7 +72,9 @@ local keymaps = {
         -- EDITING
         ---------------------------------------
         ['vi<C-b>'] = { 'vi[', "Select everything inside closest square brackets" },
+        ['ci<C-b>'] = { 'ci[', "Change everything inside closest square brackets" },
         ['di<C-b>'] = { 'di[', "Delete everything inside closest square brackets" },
+        ['yi<C-b>'] = { 'yi[', "Yank everything inside closest square brackets" },
         ['<leader>uc'] = { ':e!<CR>', "[U]ndo unsaved [c]hanges in current buffer" },
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Rename all occurrences of word in file" },
