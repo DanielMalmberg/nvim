@@ -17,11 +17,6 @@ vim.api.nvim_set_keymap('x', '<C-l>', '<Nop>', { noremap = true, silent = true }
 -- ['key'] = { 'action', "description" }
 local keymaps = {
     insert = {
-        ['('] = { '()<Left>', "" },
-        ['['] = { '[]<Left>', "" },
-        ['{'] = { '{}<Left>', "" },
-        ['"'] = { '""<Left>', "" },
-        ["'"] = { "''<Left>", "" },
         ['<C-c>'] = { '<ESC>', "" }
     },
     visual = {
