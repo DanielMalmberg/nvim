@@ -19,6 +19,7 @@ return {
         'xml',
         'json',
         'markdown',
+        'markdown_inline',
         'lua',
         'python',
         'rust',

@@ -17,6 +17,8 @@ vim.cmd [[let &fcs='eob: ']]
 -- Set highlight on search
 vim.o.hlsearch = false
 
+-- Conceal some characters
+vim.opt.conceallevel = 2
 
 -- Enable mouse mode
 vim.o.mouse = 'a'

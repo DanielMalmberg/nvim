@@ -1,5 +1,4 @@
 -- NOTE: Additonal config files with keymaps:
-
 -- plugins/mason_lspconfig.lua
 -- plugins/nvim_cmp.lua
 -- plugins/toggleterm.lua
@@ -69,6 +68,10 @@ local keymaps = {
         ['<leader>tt'] = { ':ToggleDiag<CR>', "[T]oggle [Troubles] - show/hide LSP warnings and errors" },
         ['<leader>lt'] = { ':Trouble diagnostics toggle<CR>', "[L]ist all [T]roubles - LSP warnings and errors" },
 
+        -- Obsidian
+        ---------------------------------------
+        ['gf'] = { function() if require('obsidian').util.cursor_on_markdown_link() then return "<cmd>ObsidianFollowLink<CR>" else return "gf" end end, "Go to markdown link" },
+
         -- EDITING
         ---------------------------------------
         ['vi<C-b>'] = { 'vi[', "Select everything inside closest square brackets" },
@@ -92,6 +95,14 @@ local keymaps = {
         ['<leader>sw'] = { require('telescope.builtin').grep_string, "[S]earch current [W]ord" },
         ['<leader>wd'] = { require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics" },
         ['<leader>ds'] = { require('telescope.builtin').lsp_document_symbols, "LSP [D]ocument [S]ymbols" },
+
+        -- COPLILOT
+        ---------------------------------------
+        ['<leader>ce'] = { ':Copilot enable<CR>:echo "Copilot enabled"<CR>', "Enable Copilot" },
+        ['<leader>cd'] = { ':Copilot disable<CR>:echo "Copilot disabled"<CR>', "Disable Copilot" },
+        ['<leader>ci'] = { ':Copilot status<CR>', "Check Copilot status" },
+        ['<leader>cf'] = { ':Copilot file_info<CR>', "Get file info from Copilot" },
+        ['<leader>c?'] = { ':Copilot help<CR>', "Get help from Copilot" },
 
         -- SPECTRE
         ---------------------------------------

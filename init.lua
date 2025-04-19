@@ -39,4 +39,4 @@ require('features')
 -- AFTER
 
 -- Disable Copilot at startup
--- vim.cmd('Copilot disable')
+vim.cmd('Copilot disable')
