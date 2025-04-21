@@ -23,8 +23,8 @@ return {
       end, { expr = true, desc = "Rename all occurrences of word in LSP" })
 
 
-      lsp_map('gd', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-      lsp_map('gD', vim.lsp.buf.definition, '[G]oto [D]efinition')
+      lsp_map('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
+      lsp_map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
       lsp_map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
       lsp_map('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
       lsp_map('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
