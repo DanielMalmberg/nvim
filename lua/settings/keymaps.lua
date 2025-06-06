@@ -98,11 +98,11 @@ local keymaps = {
 
         -- COPLILOT
         ---------------------------------------
-        ['<leader>ce'] = { ':Copilot enable<CR>:echo "Copilot enabled"<CR>', "Enable Copilot" },
-        ['<leader>cd'] = { ':Copilot disable<CR>:echo "Copilot disabled"<CR>', "Disable Copilot" },
-        ['<leader>ci'] = { ':Copilot status<CR>', "Check Copilot status" },
-        ['<leader>cf'] = { ':Copilot file_info<CR>', "Get file info from Copilot" },
-        ['<leader>c?'] = { ':Copilot help<CR>', "Get help from Copilot" },
+        -- ['<leader>ce'] = { ':Copilot enable<CR>:echo "Copilot enabled"<CR>', "Enable Copilot" },
+        -- ['<leader>cd'] = { ':Copilot disable<CR>:echo "Copilot disabled"<CR>', "Disable Copilot" },
+        -- ['<leader>ci'] = { ':Copilot status<CR>', "Check Copilot status" },
+        -- ['<leader>cf'] = { ':Copilot file_info<CR>', "Get file info from Copilot" },
+        -- ['<leader>c?'] = { ':Copilot help<CR>', "Get help from Copilot" },
 
         -- SPECTRE
         ---------------------------------------

@@ -55,7 +55,7 @@ return {
     -- Enable default language servers
     local servers = {
       html = {},
-      jsonls = {},
+      -- jsonls = {},
       ts_ls = {},
       bashls = {},
       pylsp = {},
