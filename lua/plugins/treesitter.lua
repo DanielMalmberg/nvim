@@ -17,7 +17,7 @@ return {
         'html',
         'css',
         'xml',
-        -- 'json',
+        'json',
         'markdown',
         'markdown_inline',
         'lua',

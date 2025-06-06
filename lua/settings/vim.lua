@@ -65,3 +65,12 @@ vim.g.loaded_netrwPlugin = 1
 -- Required for Bufferline plugin to work
 vim.opt.termguicolors = true
 
+
+-- Set language for file extensions
+-- .base
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = "*.base",
+  callback = function()
+    vim.bo.filetype = "yaml"
+  end,
+})
