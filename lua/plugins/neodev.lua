@@ -53,7 +53,7 @@ return {
             configurationSources = { "pycodestyle" },
             plugins = {
               pycodestyle = {
-                ignore = { "E501", "W503" },
+                ignore = { "E501", "W503", "W191" },
               },
             },
           },
