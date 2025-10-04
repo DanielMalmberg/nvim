@@ -6,7 +6,8 @@ vim.cmd('set noshowmode')
 
 -- Make line numbers default
 vim.wo.number = true
-vim.cmd('set number')
+-- vim.cmd('set number')
+vim.cmd('set relativenumber')
 
 -- Disable Neovim intro text
 vim.opt.shortmess:append("sI")
