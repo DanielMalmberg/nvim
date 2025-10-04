@@ -95,6 +95,7 @@ local keymaps = {
         ['<leader>sw'] = { require('telescope.builtin').grep_string, "[S]earch current [W]ord" },
         ['<leader>wd'] = { require('telescope.builtin').diagnostics, "[W]orkspace [D]iagnostics" },
         ['<leader>ds'] = { require('telescope.builtin').lsp_document_symbols, "LSP [D]ocument [S]ymbols" },
+        ['<leader>tl'] = { require('telescope.builtin').colorscheme, "[T]heme [L]ist" },
 
         -- COPLILOT
         ---------------------------------------
