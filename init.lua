@@ -38,5 +38,7 @@ require('features')
 
 -- AFTER
 
+require('settings.theme').setup()
+
 -- Disable Copilot at startup
 -- vim.cmd('Copilot disable')
