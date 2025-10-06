@@ -19,9 +19,4 @@ M.backgrounds = {
     'ToggleTerm1Normal',
 }
 
-M.vscode_custom_colors = {
-    -- ['NvimTreeWinSeparator'] = "guifg=#505050",
-    -- ['IndentBlanklineContextChar'] = "guifg=#949494",
-}
-
 return M
