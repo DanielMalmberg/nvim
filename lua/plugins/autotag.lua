@@ -1,5 +1,5 @@
 -- [[ Autotag ]]
--- Automatically add closing tags in HTML and XML files
+-- Automatically add closing tags in HTML and XML files (using Treesitter)
 
 return {
   "windwp/nvim-ts-autotag",

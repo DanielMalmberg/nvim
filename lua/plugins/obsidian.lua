@@ -1,3 +1,6 @@
+-- [[ Obsidian ]]
+-- For writing and navigating Obsidian vaults
+
 return {
   "epwalsh/obsidian.nvim",
   version = "*",

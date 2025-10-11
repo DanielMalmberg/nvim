@@ -1,5 +1,5 @@
 -- [[ Spectre ]]
--- A panel that uses sed to search and replace a given regex word in files
+-- Interactive search and replace panel across files using regex
 
 return {
   "nvim-pack/nvim-spectre",

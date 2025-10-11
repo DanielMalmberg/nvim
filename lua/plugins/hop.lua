@@ -1,5 +1,5 @@
 -- [[ Hop ]]
--- Function for making larger jumps in the current buffer
+-- Easy-motion style navigation to quickly jump to any word, character, or pattern in the buffer
 
 return {
   "phaazon/hop.nvim",

@@ -1,5 +1,5 @@
 -- [[ Debugger ]]
--- This module configures the nvim-dap plugin for debugging in Neovim. 
+-- DAP client for debugging 
 
 return {
   'mfussenegger/nvim-dap',
