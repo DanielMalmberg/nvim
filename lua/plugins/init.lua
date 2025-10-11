@@ -1,10 +1,14 @@
--- [[ Plugins without configuration or setup function ]]
-
 return {
    -- subfolders
+   { import = 'plugins.editing' },
+   { import = 'plugins.lsp' },
+   { import = 'plugins.navigation' },
+   { import = 'plugins.syntax' },
    { import = 'plugins.themes' },
+   { import = 'plugins.tools' },
+   { import = 'plugins.ui' },
 
-   -- plugins
+   -- plugins without configurations
    "sindrets/diffview.nvim",  -- Toggle view of current git changes
    "tpope/vim-fugitive",      -- Makes it possible to do git commands direclty in Neovim
    "tpope/vim-surround",      -- Change symbols wrapping a text
