@@ -32,7 +32,7 @@ vim.deprecate = function() end
 
 require('managers')
 require('settings')
-require('features')
+require('functions')
 
 -- -----------------------------------------------------------
 

@@ -9,7 +9,7 @@ function M.setup()
     vim.opt.background = 'dark'
     vim.cmd.colorscheme(M.startup_theme)
     if M.transparent_at_startup then
-      require('features.toggle_transparency').toggle_transparency()
+      require('functions.toggle_transparency').toggle_transparency()
     end
 end
 

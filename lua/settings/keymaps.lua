@@ -3,8 +3,8 @@
 -- plugins/nvim_cmp.lua
 -- plugins/toggleterm.lua
 -- plugins/treesitter.lua
--- features/format_brackets.lua
--- features/wordwrapper.lua
+-- functions/format_brackets.lua
+-- functions/wordwrapper.lua
 
 -- UNBIND UNNECESSARY KEYMAPS
 ----------------------------------
@@ -29,9 +29,9 @@ local keymaps = {
     normal = {
         -- GUI
         ---------------------------------------
-        ['<S-u>'] = { ":lua require('features.toggle_transparency').toggle_transparency()<CR>", "Toggle transparency" },
-        ['<leader>tn'] = { ":lua require('features.theme_switcher').next_theme()<CR>", "Switch to next custom installed theme"},
-        ['<leader>tp'] = { ":lua require('features.theme_switcher').previous_theme()<CR>", "Switch to previous custom installed theme"},
+        ['<S-u>'] = { ":lua require('functions.toggle_transparency').toggle_transparency()<CR>", "Toggle transparency" },
+        ['<leader>tn'] = { ":lua require('functions.theme_switcher').next_theme()<CR>", "Switch to next custom installed theme"},
+        ['<leader>tp'] = { ":lua require('functions.theme_switcher').previous_theme()<CR>", "Switch to previous custom installed theme"},
         ['<leader>-'] = { ":Telescope colorscheme<CR>", "Open theme selector" },
 
         -- NAVIGATING
@@ -52,7 +52,7 @@ local keymaps = {
         ['<Tab>'] = { ':bp<CR>', "Go to next buffer" },
         ['<S-Tab>'] = { ':bn<CR>', "Go to previous buffer" },
         ['<leader>ls'] = { ':ls<CR>', "List all open buffers" },
-        ["<leader>x"] = { ":lua require('features.close_buffer').close_current_buffer()<CR>", "Close current buffer" },
+        ["<leader>x"] = { ":lua require('functions.close_buffer').close_current_buffer()<CR>", "Close current buffer" },
         ['<leader>X'] = { ':bufdo bd<CR>', "Close all open buffers" },
 
         -- FILES
@@ -82,7 +82,7 @@ local keymaps = {
         ['<leader>rp'] = { ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>',
             "Rename all occurrences of word in file" },
         ['<leader>wp'] = {'viw"_dP', "Paste yanked text over current word and keep the yanked text in the clipboard" },
-        ["<leader>rq"] = { ":lua require('features.replace_in_quickfix').replace_in_quickfix_keymap()<CR>", "Rename all occurrences of word in quickfix" },
+        ["<leader>rq"] = { ":lua require('functions.replace_in_quickfix').replace_in_quickfix_keymap()<CR>", "Rename all occurrences of word in quickfix" },
 
         -- TELESCOPE
         ---------------------------------------
