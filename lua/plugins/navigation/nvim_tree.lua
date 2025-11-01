@@ -8,7 +8,11 @@ return {
     require("nvim-tree").setup({
       filters = {
         dotfiles = true,
-        custom = { "__pycache__"}
+        custom = { 
+          -- python
+          "__pycache__",
+          "pyrightconfig.json"
+        }
       }
     })
   end
