@@ -46,19 +46,19 @@ return {
       }
     })
 
-    if lspconfig.pylsp then
-      lspconfig.pylsp.setup {
-        settings = {
-          pylsp = {
-            configurationSources = { "pycodestyle" },
-            plugins = {
-              pycodestyle = {
-                ignore = { "E501", "W503", "W191" },
-              },
-            },
-          },
-        },
-      }
-    end
+    -- if lspconfig.pylsp then
+    --   lspconfig.pylsp.setup {
+    --     settings = {
+    --       pylsp = {
+    --         configurationSources = { "pycodestyle" },
+    --         plugins = {
+    --           pycodestyle = {
+    --             ignore = { "E501", "W503", "W191" },
+    --           },
+    --         },
+    --       },
+    --     },
+    --   }
+    -- end
   end,
 }

@@ -59,7 +59,6 @@ return {
       yamlls = {},
       ts_ls = {},
       bashls = {},
-      pylsp = {},
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },
