@@ -10,6 +10,7 @@ return {
         dotfiles = true,
         custom = { 
           -- python
+          "__init__.py",
           "__pycache__",
           "pyrightconfig.json"
         }
